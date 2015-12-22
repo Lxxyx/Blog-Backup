@@ -1,0 +1,28 @@
+title: First blog
+date: 2015-12-04 11:47:22
+tags: 随笔
+---
+> 各个标题上的时间代表博客的修改与变化时间
+
+## Hexo
+折腾了许久。第一个Github的Blog搭建起来了。之前也有折腾过阿里云，用过wordpress，但总感觉有点繁琐。而且服务器价格有那么高，所以用了一个月就放弃了。
+总而言之，今天开始写博客~把经验都分享出来。
+## 域名 2015.12.6
+花了半天时间，把之前购买的域名ncuhr.win,绑定到了博客上。
+很高兴的是CloudXNS一秒钟就生效了。
+## 七牛
+在此不得不提的是七牛，因为github是国外网站。因此访问还是有点慢，所以把所有图片的图床换成了七牛，也把js的源替换成了百度的静态资源。
+## Gitcafe 2015.12.11
+虽然域名绑定好了，但是Github毕竟还是在国外，访问速度还是会受到影响。
+百度了一下，发现了Gitcafe这个网站。服务器在国内。于是就把博客迁移到了Gitcafe上。（具体开通教程这儿不再赘述了。）
+之前以为很麻烦的，结果Hexo只要在部署选项中加入Gitcafe就行。
+有兴趣的可以点击链接
+> [Gitcafe](https://gitcafe.com)
+[GitCafe Pages Wiki](https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9)
+
+![部署两个网站](http://7xk109.com1.z0.glb.clouddn.com/QQ截图20151211194549.jpg)
+
+然后就是轻车熟路的Hexo g和Hexo d。
+最后再去域名服务商那儿，把DNS地址改为指向Gitcafe的Pages服务即可。
+
+感觉速度快了很多。在也不担心国内网络环境差了。
