@@ -1,10 +1,14 @@
 {
   "name": "hexo-site",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "hexo": {
     "version": "3.1.1"
   },
+  "scripts":{
+      "start":"hexo g && hexo d",
+      "backup":"git add *"
+    },
   "dependencies": {
     "hexo": "^3.1.0",
     "hexo-deployer-git": "0.0.4",
