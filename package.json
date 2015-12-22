@@ -7,7 +7,7 @@
   },
   "scripts":{
       "start":"hexo g && hexo d",
-      "backup":"git add * && git commit -m 'autoBackup' "
+      "backup":"git add * && git commit -m 'autoBackup' && git push -u origin master"
     },
   "dependencies": {
     "hexo": "^3.1.0",
