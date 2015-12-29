@@ -6,7 +6,7 @@
     "version": "3.1.1"
   },
   "scripts":{
-      "start":"hexo g && hexo d && rm backup.txt && git add * && git commit -m 'autoBackup' && git push && touch backup.txt"
+      "start":"hexo g && hexo d && rm backup.txt && git add * && git commit -m '博客程序自动备份' && git push && touch backup.txt"
   },
   "dependencies": {
     "hexo": "^3.1.0",
