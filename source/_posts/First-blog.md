@@ -1,4 +1,4 @@
-title: First blog
+title: 博客更新记录
 date: 2015-12-04 11:47:22
 tags: 随笔
 ---
