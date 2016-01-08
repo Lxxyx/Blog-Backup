@@ -189,6 +189,77 @@
 
       <div class="body-wrap">
   
+    <article id="post-闭包中循环部分的理解" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/01/08/闭包中循环部分的理解/" class="article-date">
+  	<time datetime="2016-01-08T01:23:39.000Z" itemprop="datePublished">2016-01-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/08/闭包中循环部分的理解/">闭包中循环部分的理解</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>](); <span class="comment">// 10</span></span><br></pre></td></tr></table></figure>
+<p>这是一段很经典的代码。之前一直无法理解，为什么<code>console.log(i)</code>的时候，i是10而不是a[i]所对应的值。</p>
+<p>看似数组<code>a</code>中，每个元素都取到了相应的i。</p>
+<p>但是。数组<code>a</code>其实取到的是那个函数，<code>i</code>的话，其实是在运行的时候读取的。</p>
+<p>如果运行<code>a[6]();</code>函数，那么实质上<code>i</code>从全局作用域中读取，此时的<code>i</code>已经是循环结束后的那个10了。</p>
+<p>对此，只需稍作改造。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  a[i] = (<span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(num)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)(i)</span><br><span class="line">&#125;</span><br><span class="line">a[<span class="number">6</span>]();</span><br></pre></td></tr></table></figure></p>
+<p>我们把<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a<span class="matrix">[i]</span> = <span class="function"><span class="keyword">function</span> <span class="params">()</span> &#123;</span></span><br><span class="line">  console.<span class="built_in">log</span>(<span class="built_in">i</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>改成了<br><figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a<span class="matrix">[i]</span> = (<span class="function"><span class="keyword">function</span><span class="params">(num)</span> &#123;</span></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span><span class="params">()</span> &#123;</span></span><br><span class="line">    console.<span class="built_in">log</span>(num)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)(<span class="built_in">i</span>)</span><br></pre></td></tr></table></figure></p>
+<p>此时，循环中的<code>i</code>作为<code>num</code>的值传递给匿名立即执行函数，函数运行后返回一个函数，保持着对传进来的<code>num</code>的引用。十个函数便有十个闭包。</p>
+<p>此时<code>a[i]</code>又等于函数。运行<code>a[i]</code>时，就会读取闭包所保存的变量。</p>
+<p>到这儿的话，总算对闭包有所了解了。</p>
+<p>包括之前迷迷糊糊的this值指来指去，闭包会导致内存泄漏等问题。总算是了解了个清楚。下回写博客时候，给一起写出来。</p>
+<blockquote>
+<p><a href="http://es6.ruanyifeng.com/#docs/let#基本用法" target="_blank" rel="external">let的基本用法，也是总算对闭包有所了解的地方</a></p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端/">前端</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-管理学之路" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
