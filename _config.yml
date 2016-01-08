@@ -7,11 +7,11 @@ subtitle: 文科生の程序生活
 description: 文科生，热爱前端与编程。目前大二
 author: Lxxyx
 language: zh-Hans
-timezone: 
+timezone: zh-cn
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.ncuhr.win
+url: http://www.lxxyx.win
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults: 
@@ -23,7 +23,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+i18n_dir: lang
 skip_render: 
 
 # Writing
