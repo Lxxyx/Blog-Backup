@@ -11,12 +11,12 @@ tags: 前端
 
 因为自己很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
 
-## 作用方式
-在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。)
+## 简介
+在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。）
 > The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.
 
 不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来meta标签的作用方式就很好理解了。
-## 用处
+### 用处
 > Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
 The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services
 
@@ -25,7 +25,7 @@ The metadata can be used by browsers (how to display content or reload page), se
 
 ## 组成
 meta标签共有两个属性，分别是http-equiv属性和name属性。
-### 1.name属性
+### 1. name属性
 name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。
 meta标签中name属性语法格式是：
 ```
@@ -89,3 +89,5 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 ```
 #### H. revisit-after(搜索引擎爬虫重访时间)
 说明：如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问。
+
+### 2. http-equiv属性
