@@ -1,4 +1,4 @@
-title: 寒假前端学习(1)——HTML <meta>标签
+title: 寒假前端学习(1)——HTML meta标签总结
 date: 2016-01-09 20:32:26
 tags: 前端
 ---
