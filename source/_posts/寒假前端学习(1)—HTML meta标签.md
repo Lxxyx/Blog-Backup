@@ -6,10 +6,10 @@ tags: 前端
 ```
 <meta charset="UTF-8">
 ```
-但是打开任意的网站，其head标签内都有一列的meta标签。比如it之家的。
-![it之家的meta标签](http://7xoxxe.com1.z0.glb.clouddn.com/meta.jpg)
+但是打开任意的网站，其head标签内都有一列的meta标签。比如我博客的。
+![Lxxyx博客的meta标签](http://7xoxxe.com1.z0.glb.clouddn.com/metas.jpg)
 
-因为自己很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
+但是却自己很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
 
 ## 简介
 在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。）
