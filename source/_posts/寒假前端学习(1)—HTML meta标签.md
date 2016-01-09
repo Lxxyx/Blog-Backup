@@ -6,22 +6,22 @@ tags: 前端
 ```
 <meta charset="UTF-8">
 ```
-但是打开任意的网站，其`<head>`标签内都有一列的`meta`标签。比如it之家的。
+但是打开任意的网站，其head标签内都有一列的meta标签。比如it之家的。
 ![it之家的meta标签](http://7xoxxe.com1.z0.glb.clouddn.com/meta.jpg)
 
-因为自己很不熟悉，于是把`<meta>`标签加入了寒假学习计划的最前方。
+因为自己很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
 
 ## 作用方式
 在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。)
 > The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.
 
-不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来`<meta>`标签的作用方式就很好理解了。
+不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来meta标签的作用方式就很好理解了。
 ## 用处
 > Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
 The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services
 
-这句话对`<meta>`标签用处的介绍，简洁明了。
-翻译过来就是：`<meta>`常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。
+这句话对meta标签用处的介绍，简洁明了。
+翻译过来就是：meta常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。
 
 ## 组成
 meta标签共有两个属性，分别是http-equiv属性和name属性。
