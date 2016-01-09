@@ -98,4 +98,4 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 
 后来还准备去Segmentfault提问来着。结果在写问题的时候，突然反应出equivalent还有相当于的意思。意思就是相当于http的作用。至于文件头是哪儿出来的，估计是从其作用来分析的。我认为顾名思义并不能得出"相当于http的文件头作用"这个论断。
 
-这个就是对http-equiv意思的简介。相当于HTTP的作用，比如说定义些HTTP参数啥的。
+这个我所认为的http-equiv意思的简介。`相当于HTTP的作用，比如说定义些HTTP参数啥的。`
