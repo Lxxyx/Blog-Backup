@@ -50,7 +50,7 @@ meta标签中name属性语法格式是：
 
 举例（常用范例）：
 ```
-<meta name=”viewport” content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 ```
 #### D.robots(定义搜索引擎爬虫的索引方式)
 说明：robots用来告诉爬虫哪些页面需要索引，哪些页面不需要索引。
