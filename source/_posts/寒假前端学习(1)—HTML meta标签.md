@@ -31,7 +31,7 @@ meta标签中name属性语法格式是：
 ```
 <meta name="参数" content="具体的描述">。 
 ```
-其中name属性共有以下几种参数。<b>(A-C为常用属性)</b>
+其中name属性共有以下几种参数。<strong>(A-C为常用属性)</strong>
 #### A. keywords(关键字)
 说明：用于告诉搜索引擎，你网页的关键字。
 举例：
@@ -118,7 +118,7 @@ meta标签中http-equiv属性语法格式是：
 <meta http-equiv="参数" content="具体的描述">
 ```
 其中http-equiv属性主要有以下几种参数：
-#### A. content-Type(设定网页字符集)()推荐使用HTML5的方式)
+#### A. content-Type(设定网页字符集)(推荐使用HTML5的方式)
 说明：用于设定网页字符集，便于浏览器解析与渲染页面
 举例：
 ```
