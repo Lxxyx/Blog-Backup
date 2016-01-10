@@ -29,20 +29,20 @@ meta标签共有两个属性，分别是http-equiv属性和name属性。
 name属性主要用于描述网页，比如网页的关键词，叙述等。与之对应的属性值为content，content中的内容是对name填入类型的具体描述，便于搜索引擎抓取。
 meta标签中name属性语法格式是：
 ```
-<meta name="参数"content="具体的描述">。 
+<meta name="参数" content="具体的描述">。 
 ```
 其中name属性共有以下几种参数。<b>(A-C为常用属性)</b>
 #### A. keywords(关键字)
 说明：用于告诉搜索引擎，你网页的关键字。
 举例：
 ```
-<meta name="keywords"content="Lxxyx,博客，文科生，前端">
+<meta name="keywords" content="Lxxyx,博客，文科生，前端">
 ```
 #### B. description(网站内容的描述)
 说明：用于告诉搜索引擎，你网站的主要内容。
 举例：
 ```
-<meta name="description"content="文科生，热爱前端与编程。目前大二，这是我的前端博客"> 
+<meta name="description" content="文科生，热爱前端与编程。目前大二，这是我的前端博客"> 
 ```
 #### C. viewport(移动端的窗口)
 说明：这个概念较为复杂，具体的会在下篇博文中讲述。
@@ -73,19 +73,19 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 说明：用于标注网页作者
 举例：
 ```
-<meta name="author"content="Lxxyx,841380530@qq.com"> 
+<meta name="author" content="Lxxyx,841380530@qq.com"> 
 ```
 #### F. generator(网页制作软件)
 说明：用于标明网页是什么软件做的
 举例(不知道能不能这样写)：
 ```
-<meta name="generator"content="Sublime Text3"> 
+<meta name="generator" content="Sublime Text3"> 
 ```
 #### G. copyright(版权)
 说明：用于标注版权信息
 举例：
 ```
-<meta name="copyright"content="Lxxyx"> //代表该网站为Lxxyx个人版权所有。
+<meta name="copyright" content="Lxxyx"> //代表该网站为Lxxyx个人版权所有。
 ```
 #### H. revisit-after(搜索引擎爬虫重访时间)
 说明：如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问。
