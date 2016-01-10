@@ -81,7 +81,7 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 ```
 <meta name="generator"content="Sublime Text3"> 
 ```
-#### G. copyright（版权）
+#### G. copyright(版权)
 说明：用于标注版权信息
 举例：
 ```
@@ -118,7 +118,7 @@ meta标签中http-equiv属性语法格式是：
 <meta http-equiv="参数" content="具体的描述">
 ```
 其中http-equiv属性主要有以下几种参数：
-#### A.content-Type(设定网页字符集)（推荐使用HTML5的方式）
+#### A.content-Type(设定网页字符集)()推荐使用HTML5的方式)
 说明：用于设定网页字符集，便于浏览器解析与渲染页面
 举例：
 ```
@@ -126,7 +126,7 @@ meta标签中http-equiv属性语法格式是：
 
 <meta charset="utf-8"> //HTML5设定网页字符集的方式，推荐使用UTF-8
 ```
-#### B.X-UA-Compatible（浏览器采取何种版本渲染当前页面）
+#### B.X-UA-Compatible(浏览器采取何种版本渲染当前页面)
 说明：用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
 举例：
 ```
@@ -134,9 +134,24 @@ meta标签中http-equiv属性语法格式是：
  ```
 #### C.Cache-Control(指定请求和响应遵循的缓存机制)
 ###### 用法1.
-说明：用于指定所有缓存机制在整个请求/响应链中必须服从的指令。
+说明：指导浏览器如何缓存某个响应以及缓存多长时间。这一段内容我在网上找了很久，但都没有找到满意的。
+最后终于在Google Developers中发现了我想要的答案。
+> [cache简介](http://7xoxxe.com1.z0.glb.clouddn.com/cache.png)
 
-###### 用法2.
+举例:
+```
+<meta http-equiv="cache-control" content="no-cache">
+```
+共有以下几种用法：
+1. no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。
+2. no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）
+3. public  : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果
+4. private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不能缓存这种类型的）
+5. maxage  : 表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：max-age=60表示响应可以再缓存和重用 60 秒。
+
+> [参考链接：HTTP缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn#cache-control)
+
+###### 用法2.(禁止百度自动转码)
 说明：用于禁止当前页面在移动端浏览时，被百度自动转码。虽然百度的本意是好的，但是转码效果很多时候却不尽人意。所以可以在head中加入例子中的那句话，就可以避免百度自动转码了。
 举例：
 ```
@@ -149,3 +164,4 @@ meta标签中http-equiv属性语法格式是：
 ```
 <meta http-equiv="expires" content="Sunday 26 October 2016 01:00 GMT" />
 ```
+
