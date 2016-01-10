@@ -136,7 +136,7 @@ meta标签中http-equiv属性语法格式是：
 ###### 用法1.
 说明：指导浏览器如何缓存某个响应以及缓存多长时间。这一段内容我在网上找了很久，但都没有找到满意的。
 最后终于在Google Developers中发现了我想要的答案。
-> [cache简介](http://7xoxxe.com1.z0.glb.clouddn.com/cache.png)
+> ![cache简介](http://7xoxxe.com1.z0.glb.clouddn.com/cache.png)
 
 举例:
 ```
