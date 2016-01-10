@@ -118,7 +118,7 @@ meta标签中http-equiv属性语法格式是：
 <meta http-equiv="参数" content="具体的描述">
 ```
 其中http-equiv属性主要有以下几种参数：
-#### A.content-Type(设定网页字符集)()推荐使用HTML5的方式)
+#### A. content-Type(设定网页字符集)()推荐使用HTML5的方式)
 说明：用于设定网页字符集，便于浏览器解析与渲染页面
 举例：
 ```
@@ -126,13 +126,13 @@ meta标签中http-equiv属性语法格式是：
 
 <meta charset="utf-8"> //HTML5设定网页字符集的方式，推荐使用UTF-8
 ```
-#### B.X-UA-Compatible(浏览器采取何种版本渲染当前页面)
+#### B. X-UA-Compatible(浏览器采取何种版本渲染当前页面)
 说明：用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
 举例：
 ```
  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> //指定IE和Chrome使用最新版本渲染当前页面
  ```
-#### C.Cache-Control(指定请求和响应遵循的缓存机制)
+#### C. cache-control(指定请求和响应遵循的缓存机制)
 ###### 用法1.
 说明：指导浏览器如何缓存某个响应以及缓存多长时间。这一段内容我在网上找了很久，但都没有找到满意的。
 最后终于在Google Developers中发现了我想要的答案。
@@ -158,10 +158,29 @@ meta标签中http-equiv属性语法格式是：
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 ```
 
-#### D. Expires(网页到期时间)
+#### D. expires(网页到期时间)
 说明:用于设定网页的到期时间，过期后网页必须到服务器上重新传输。
 举例：
 ```
 <meta http-equiv="expires" content="Sunday 26 October 2016 01:00 GMT" />
 ```
+#### E. refresh(自动刷新并指向某页面)
+说明：网页将在设定的时间内，自动刷新并调向设定的网址。
+举例:
+```
+<meta http-equiv="refresh" content="2；URL=http://www.lxxyx.win/"> //意思是2秒后跳转向我的博客
+```
+#### F. Set-Cookie(cookie设定)
+说明：如果网页过期。那么这个网页存在本地的cookies也会被自动删除。
+```
+<meta http-equiv="Set-Cookie" content="name, date"> //格式
 
+<meta http-equiv="Set-Cookie" content="User=Lxxyx; path=/; expires=Sunday, 10-Jan-16 10:00:00 GMT"> //具体范例
+```
+## 最后
+暂时总结的就这么多了，meta标签的自定义属性实在太多了。所以只去找了常用的一些，还有像`Window-target`这样已经基本被废弃的属性，我也没有添加。
+一开始以为一两个小时就能学习完毕，结果没想到竟然花了五六个小时，各处查资料，推敲文字。敲击文字的时候，也感觉自己学习了非常多。比如基本的SEO，HTTP协议的再次理解等。
+
+因为经验不足，所以如果有出错的地方，希望各位能帮忙指正。最后附上本人博客地址，希望能与各位多多交流。
+
+> [Lxxyx的前端乐园](http://www.lxxyx.win)
