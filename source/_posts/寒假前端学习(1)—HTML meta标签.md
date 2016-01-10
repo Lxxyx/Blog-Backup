@@ -9,7 +9,7 @@ tags: 前端
 但是打开任意的网站，其head标签内都有一列的meta标签。比如我博客的。
 ![Lxxyx博客的meta标签](http://7xoxxe.com1.z0.glb.clouddn.com/metas.jpg)
 
-但是却自己很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
+但是自己却很不熟悉，于是把meta标签加入了寒假学习计划的最前方。
 
 ## 简介
 在查阅w3school中，第一句话中的“元数据”就让我开始了Google之旅。然后很顺利的在英文版的w3school找到了想要的结果。（中文w3school说的是元信息，Google和百度都没有相关的词条。但元数据在Google就有详细解释。所以这儿采用英文版W3school的解释。）
@@ -32,7 +32,7 @@ meta标签中name属性语法格式是：
 <meta name="参数"content="具体的描述">。 
 ```
 其中name属性共有以下几种参数。<b>(A-C为常用属性)</b>
-#### A. Keywords(关键字)
+#### A. keywords(关键字)
 说明：用于告诉搜索引擎，你网页的关键字。
 举例：
 ```
@@ -85,10 +85,22 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 说明：用于标注版权信息
 举例：
 ```
-<meta name="generator"content="Lxxyx"> //代表是Lxxyx版权所有 
+<meta name="copyright"content="Lxxyx"> //代表该网站为Lxxyx个人版权所有。
 ```
 #### H. revisit-after(搜索引擎爬虫重访时间)
 说明：如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问。
+举例：
+```
+<meta name="revisit-after" content="7 days" >
+```
+#### I. renderer(双核浏览器渲染方式)
+说明：renderer是为双核浏览器准备的，用于指定双核浏览器默认以何种方式渲染页面。比如说360浏览器。
+举例：
+```
+<meta name="renderer" content="webkit"> //默认webkit内核
+<meta name="renderer" content="ie-comp"> //默认IE兼容模式
+<meta name="renderer" content="ie-stand"> //默认IE标准模式
+```
 
 ### 2. http-equiv属性
 介绍之前，先说个小插曲。看文档和博客关于http-equiv的介绍时，有这么一句。
@@ -98,10 +110,42 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 
 后来还准备去Segmentfault提问来着。结果在写问题的时候，突然反应出equivalent还有相当于的意思。意思就是相当于http的作用。至于文件头是哪儿出来的，估计是从其作用来分析的。我认为顾名思义并不能得出"相当于http的文件头作用"这个论断。
 
-这个我所认为的http-equiv意思的简介。`相当于HTTP的作用，比如说定义些HTTP参数啥的。`
+这个我所认为的http-equiv意思的简介。
+`相当于HTTP的作用，比如说定义些HTTP参数啥的。`
 
 meta标签中http-equiv属性语法格式是：
 ```
 <meta http-equiv="参数"content="具体的描述">。 
 ```
 其中http-equiv属性主要有以下几种参数：
+#### A.content-Type(设定网页字符集)（推荐使用HTML5的方式）
+说明：用于设定网页字符集，便于浏览器解析与渲染页面
+举例：
+```
+<meta http-equiv="content-Type" content="text/html;charset=utf-8">  //旧的HTML，不推荐
+
+<meta charset="utf-8"> //HTML5设定网页字符集的方式，推荐使用UTF-8
+```
+#### B.X-UA-Compatible（浏览器采取何种版本渲染当前页面）
+说明：用于告知浏览器以何种版本来渲染页面。（一般都设置为最新模式，在各大框架中这个设置也很常见。）
+举例：
+```
+ <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/> //指定IE和Chrome使用最新版本渲染当前页面
+ ```
+#### C.Cache-Control(指定请求和响应遵循的缓存机制)
+###### 用法1.
+说明：用于指定所有缓存机制在整个请求/响应链中必须服从的指令。
+
+###### 用法2.
+说明：用于禁止当前页面在移动端浏览时，被百度自动转码。虽然百度的本意是好的，但是转码效果很多时候却不尽人意。所以可以在head中加入例子中的那句话，就可以避免百度自动转码了。
+举例：
+```
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+```
+
+#### D. Expires(网页到期时间)
+说明:用于设定网页的到期时间，过期后网页必须到服务器上重新传输。
+举例：
+```
+<meta http-equiv="expires" content="Sunday 26 October 2016 01:00 GMT" />
+```
