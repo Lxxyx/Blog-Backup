@@ -115,7 +115,7 @@ content的参数有all,none,index,noindex,follow,nofollow。默认是all。
 
 meta标签中http-equiv属性语法格式是：
 ```
-<meta http-equiv="参数"content="具体的描述">。 
+<meta http-equiv="参数" content="具体的描述">。 
 ```
 其中http-equiv属性主要有以下几种参数：
 #### A.content-Type(设定网页字符集)（推荐使用HTML5的方式）
