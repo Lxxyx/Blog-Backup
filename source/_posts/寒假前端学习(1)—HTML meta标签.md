@@ -146,7 +146,7 @@ meta标签中http-equiv属性语法格式是：
 1. no-cache: 先发送请求，与服务器确认该资源是否被更改，如果未被更改，则使用缓存。
 2. no-store: 不允许缓存，每次都要去服务器上，下载完整的响应。（安全措施）
 3. public  : 缓存所有响应，但并非必须。因为max-age也可以做到相同效果
-4. private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不能缓存这种类型的）
+4. private : 只为单个用户缓存，因此不允许任何中继进行缓存。（比如说CDN就不允许缓存private的响应）
 5. maxage  : 表示当前请求开始，该响应在多久内能被缓存和重用，而不去服务器重新请求。例如：max-age=60表示响应可以再缓存和重用 60 秒。
 
 > [参考链接：HTTP缓存](https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching?hl=zh-cn#cache-control)
