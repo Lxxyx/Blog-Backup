@@ -61,7 +61,7 @@ ul和ol虽然都是列表项，但是具体使用时，差别还是很大的。
 说明:虽然b和strong的展示效果一样，都是将字体加粗表示。但是b在HTML5中又发生了变化。
 1. b标签(bold):
 > HTML4的定义:
-The <b> tag is for "offset text conventionally styled in bold,without conveying any extra emphasis or importance.
+The `<b>` tag is for "offset text conventionally styled in bold,without conveying any extra emphasis or importance.
 <!-- 意思为b标签仅仅表示加粗，不带有任何强调的意味。(只是为了排版或者好看) -->
 
 > HTML5的定义:
@@ -69,7 +69,7 @@ The b element represents a span of text to which attention is being drawn for ut
 <!-- 意思为表示“文体突出”文字，通俗讲就是突出不安分的文字。像概要中的关键字，产品名。或者代表强调的排版方式 -->
 
 2.strong标签(全称是stronger emphasis):
-> <strong> represents a span of text with strong importance.a <strong> tag within another <strong> tag has even more importance. 
+> `<strong>` represents a span of text with strong importance.a <strong> tag within another <strong> tag has even more importance. 
 <!-- 意思为strong标签是语气加重，更为重要的强调，如果两个strong标签嵌套还表示极度重要。strong的重要程度是要大于em标签的 -->
 
 总结：b仅仅只是加粗，并没有任何语义。但是strong标签则有语气加重的强调的意思。
@@ -77,7 +77,7 @@ The b element represents a span of text to which attention is being drawn for ut
 说明:就像b和strong的关系一样。i和em的对应关系也很容易理解。
 1. i标签(全称是italic):
 > HTML4的定义:
-The <i> tag is for "text conventionally styled in italic". There is no semantic meaning.
+The `<i>` tag is for "text conventionally styled in italic". There is no semantic meaning.
 <!-- HTML4意思为i标签仅仅只是将字体显示为斜体，无任何语义化意思 -->
 
 > HTML5的定义:
@@ -86,7 +86,7 @@ The i element now represents a span of text in an alternate voice or mood, or ot
 
 2. em(全称是emphasis):
 
-> The <em> represents a span of text with emphatic stress.
+> The `<em>` represents a span of text with emphatic stress.
 <!-- 意思是说em有强调的意思 -->
 
 总结:i仅仅只是斜体显示，并没有任何语义。但是em标签则有加强的语义在内。
