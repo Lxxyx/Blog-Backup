@@ -60,6 +60,7 @@ ul和ol虽然都是列表项，但是具体使用时，差别还是很大的。
 #### 1. b/strong(加粗)
 说明:虽然b和strong的展示效果一样，都是将字体加粗表示。但是b在HTML5中又发生了变化。
 1. b标签(bold):
+
 > HTML4的定义:
 The `<b>` tag is for "offset text conventionally styled in bold,without conveying any extra emphasis or importance.
 <!-- 意思为b标签仅仅表示加粗，不带有任何强调的意味。(只是为了排版或者好看) -->
@@ -76,6 +77,7 @@ The b element represents a span of text to which attention is being drawn for ut
 #### 2. i/em(斜体)
 说明:就像b和strong的关系一样。i和em的对应关系也很容易理解。
 1. i标签(全称是italic):
+
 > HTML4的定义:
 The `<i>` tag is for "text conventionally styled in italic". There is no semantic meaning.
 <!-- HTML4意思为i标签仅仅只是将字体显示为斜体，无任何语义化意思 -->
