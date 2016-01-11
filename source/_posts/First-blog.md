@@ -18,7 +18,7 @@ tags: 随笔
 之前以为很麻烦的，结果Hexo只要在部署选项中加入Gitcafe就行。
 有兴趣的可以点击链接
 > [Gitcafe](https://gitcafe.com)
-[GitCafe Pages Wiki](https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9)
+> [GitCafe Pages Wiki](https://gitcafe.com/GitCafe/Help/wiki/Pages-%E7%9B%B8%E5%85%B3%E5%B8%AE%E5%8A%A9)
 
 ![部署两个网站](http://7xk109.com1.z0.glb.clouddn.com/QQ截图20151211194549.jpg)
 
