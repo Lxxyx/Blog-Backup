@@ -1,4 +1,4 @@
-title: 寒假前端学习(2)——HTML语义化标签探析与HTML5新标签简介
+title: 寒假前端学习(2)——HTML语义化标签探析
 date: 2016-01-10 20:18:24
 tags: 前端
 ---
@@ -107,11 +107,15 @@ strong的全称是:`stronger emphasis`，意思就是<strong>语气更强</stron
 > [Using `<b>` and `<i>` elements](http://www.w3.org/International/questions/qa-b-and-i-tags)
 > [HTML5: The Semantic Difference Between Bold and Strong](http://engineeredweb.com/blog/2013/html5-semantic-diff-bold-strong/)
 
-## HTML5的新标签
-2014年，W3C联盟宣布制订了八年的HTML5标准终于尘埃落地。在HTML5中，加入了许多新的语义化标签。这儿我们做个简介。
-### 1.header/footer(页眉页脚)
-说明:终于不用再写`<div class="header"></div>`了,html5中的新标签header就能完美的代表导航或页眉的作用。
-同时有header就有footer，用于表示页脚。
-### 2.div/section/article
-> Div的The div element has no special meaning at all.
-### 3.
+## 总结
+暂时总结的就这么多了,重点在于b/strong , i/em几个标签的区别。也是目前前端学习中的盲点。
+前两天看到一句话：
+> "很多人非常努力的学习JavaScript，认为学好了JavaScript就是一切。但是忽略了JavaScript其实是一门'胶水语言'的本质，它是用来粘合HTML和CSS的。"
+
+看到这句话后，决定在寒假认真学习HTML与CSS。这些东西，虽说简单，但写好也很难。比如说最近学习的Sass，PS切图等。无论哪个，都属于技术盲点。
+
+因为经验尚浅，所以如果有出错的地方，希望各位能帮忙指正。
+最后附上本人博客地址和原文链接，希望能与各位多多交流。
+
+> [Lxxyx的前端乐园](http://www.lxxyx.win)
+> 原文链接：[寒假前端学习(2)——HTML语义化标签探析](http://t.cn/R4N6aNO)
