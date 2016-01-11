@@ -1,4 +1,4 @@
-title: 寒假前端学习(2)——HTML语义化标签探析
+title: 寒假前端学习(2)——HTML语义化标签探析与HTML5新标签简介
 date: 2016-01-10 20:18:24
 tags: 前端
 ---
@@ -63,15 +63,14 @@ ul和ol虽然都是列表项，但是具体使用时，差别还是很大的。
 
 > HTML4的定义:
 The `<b>` tag is for "offset text conventionally styled in bold,without conveying any extra emphasis or importance.
-<!-- 意思为b标签仅仅表示加粗，不带有任何强调的意味。(只是为了排版或者好看) -->
+// 意思为b标签仅仅表示加粗，不带有任何强调的意味。(只是为了排版或者好看)
 <hr/>
 > HTML5的定义:
 The b element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood.
-<!-- 意思为表示“文体突出”文字，通俗讲就是突出不安分的文字。像概要中的关键字，产品名。或者代表强调的排版方式 -->
-
+// 意思为表示“文体突出”文字，通俗讲就是突出不安分的文字。像概要中的关键字，产品名。或者代表强调的排版方式
 2.strong标签(全称是stronger emphasis):
 > `<strong>` represents a span of text with strong importance.a <strong> tag within another <strong> tag has even more importance. 
-<!-- 意思为strong标签是语气加重，更为重要的强调，如果两个strong标签嵌套还表示极度重要。strong的重要程度是要大于em标签的 -->
+// 意思为strong标签是语气加重，更为重要的强调，如果两个strong标签嵌套还表示极度重要。strong的重要程度是要大于em标签的
 
 总结：b仅仅只是加粗，并没有任何语义。但是strong标签则有语气加重的强调的意思。
 #### 2. i/em(斜体)
@@ -80,16 +79,16 @@ The b element represents a span of text to which attention is being drawn for ut
 
 > HTML4的定义:
 The `<i>` tag is for "text conventionally styled in italic". There is no semantic meaning.
-<!-- HTML4意思为i标签仅仅只是将字体显示为斜体，无任何语义化意思 -->
+// HTML4意思为i标签仅仅只是将字体显示为斜体，无任何语义化意思
 <hr/>
 > HTML5的定义:
 The i element now represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose.
-<!-- 意思为i元素现在表现为在文章中突出不同意见或语气或的一段文本,例如外语，科技术语、或者是排版用的斜体文字 -->
+// 意思为i元素现在表现为在文章中突出不同意见或语气或的一段文本,例如外语，科技术语、或者是排版用的斜体文字
 
 2. em(全称是emphasis):
 
 > The `<em>` represents a span of text with emphatic stress.
-<!-- 意思是说em有强调的意思 -->
+// 意思是说em有强调的意思
 
 总结:i仅仅只是斜体显示，并没有任何语义。但是em标签则有加强的语义在内。
 
@@ -104,5 +103,14 @@ strong的全称是:`stronger emphasis`，意思就是<strong>语气更强</stron
 总结:i和b在Html5中被赋予语义，不同于html4。em和strong的差别在于强调的程度。
 
 参考链接：
-> [Using <b> and <i> elements](http://www.w3.org/International/questions/qa-b-and-i-tags)
+> [Using `<b>` and `<i>` elements](http://www.w3.org/International/questions/qa-b-and-i-tags)
 > [HTML5: The Semantic Difference Between Bold and Strong](http://engineeredweb.com/blog/2013/html5-semantic-diff-bold-strong/)
+
+## HTML5的新标签
+2014年，W3C联盟宣布制订了八年的HTML5标准终于尘埃落地。在HTML5中，加入了许多新的语义化标签。这儿我们做个简介。
+### 1.header/footer(页眉页脚)
+说明:终于不用再写`<div class="header"></div>`了,html5中的新标签header就能完美的代表导航或页眉的作用。
+同时有header就有footer，用于表示页脚。
+### 2.div/section/article
+> Div的The div element has no special meaning at all.
+### 3.
