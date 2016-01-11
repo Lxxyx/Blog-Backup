@@ -68,6 +68,7 @@ The `<b>` tag is for "offset text conventionally styled in bold,without conveyin
 > HTML5的定义:
 The b element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood.
 // 意思为表示“文体突出”文字，通俗讲就是突出不安分的文字。像概要中的关键字，产品名。或者代表强调的排版方式
+
 2.strong标签(全称是stronger emphasis):
 > `<strong>` represents a span of text with strong importance.a `<strong>` tag within another `<strong>` tag has even more importance. 
 // 意思为strong标签是语气加重，更为重要的强调，如果两个strong标签嵌套还表示极度重要。strong的重要程度是要大于em标签的
