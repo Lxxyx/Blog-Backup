@@ -64,7 +64,7 @@ ul和ol虽然都是列表项，但是具体使用时，差别还是很大的。
 > HTML4的定义:
 The `<b>` tag is for "offset text conventionally styled in bold,without conveying any extra emphasis or importance.
 <!-- 意思为b标签仅仅表示加粗，不带有任何强调的意味。(只是为了排版或者好看) -->
-
+<hr/>
 > HTML5的定义:
 The b element represents a span of text to which attention is being drawn for utilitarian purposes without conveying any extra importance and with no implication of an alternate voice or mood.
 <!-- 意思为表示“文体突出”文字，通俗讲就是突出不安分的文字。像概要中的关键字，产品名。或者代表强调的排版方式 -->
@@ -81,7 +81,7 @@ The b element represents a span of text to which attention is being drawn for ut
 > HTML4的定义:
 The `<i>` tag is for "text conventionally styled in italic". There is no semantic meaning.
 <!-- HTML4意思为i标签仅仅只是将字体显示为斜体，无任何语义化意思 -->
-
+<hr/>
 > HTML5的定义:
 The i element now represents a span of text in an alternate voice or mood, or otherwise offset from the normal prose.
 <!-- 意思为i元素现在表现为在文章中突出不同意见或语气或的一段文本,例如外语，科技术语、或者是排版用的斜体文字 -->
