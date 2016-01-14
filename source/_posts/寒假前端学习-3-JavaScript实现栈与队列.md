@@ -1,4 +1,4 @@
-title: 寒假前端学习(3)——学习JavaScript数据结构与算法,栈与队列
+title: 寒假前端学习(3)——学习JavaScript数据结构与算法，栈与队列
 date: 2016-01-14 10:43:24
 tags: 前端
 ---
@@ -14,7 +14,7 @@ tags: 前端
 
 也算是给自己的勉励吧。毕竟基础决定上限，再加上自己对计算机真的很感兴趣，所以学起来就算很累，但也是很幸福的。于是去网上选购了《学习JavaScript数据结构与算法》这本书，配合着去图书馆借阅的《大话数据结构》，开始了数据结构与算法的初步学习。
 
-> ![选用的书籍](http://7xoxxe.com1.z0.glb.clouddn.com/ds.png)
+![选用的书籍](http://7xoxxe.com1.z0.glb.clouddn.com/ds.png)
 
 这本书讲的内容很是不错，清晰易懂。同时用JavaScipt语言实现，学起来的难度低。值得一看呢。
 
@@ -28,7 +28,7 @@ tags: 前端
 举个例子就是:栈就像放在箱子里的一叠书 你要拿下面的书先要把上面的书拿开。(当然，你不能先拿下面的书。)
 看图示也可明白。
 
-> ![栈的图示](http://7xoxxe.com1.z0.glb.clouddn.com/stack.jpg)
+![栈的图示](http://7xoxxe.com1.z0.glb.clouddn.com/stack.jpg)
 
 ### JavaScipt中栈的实现
 首先，创建一个构造函数。
