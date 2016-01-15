@@ -236,7 +236,7 @@ this.size = function() {
 ```
 #### 源代码
 以上的就是单向链表在JavaScript中的实现，有兴趣的同学可以自己下载源代码查看。
-> [源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/LinkedList.js)
+> [单向链表-源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/LinkedList.js)
 
 ## 双向链表
 双向链表与单向链表很是相像。在单向链表中，只有指向下一个节点的链接。但在双向链表中，<strong>还有指向上一个节点的链接，是双向的。</strong>
@@ -431,7 +431,7 @@ this.showTail = function() {
 ```
 #### 源代码
 源代码在此~
-> [源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/DoublyLinkedList.js)
+> [双向链表-源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/DoublyLinkedList.js)
 
 ## 感想
 链表这一节，基本全部都是先按需求写代码，写完后再和书上对比。发现简直被瞬间秒成渣。自己写的很多暗坑，逻辑也很混乱。看来还是太年轻了。

@@ -152,7 +152,7 @@ function divideBy2(decNumber) {
 ```
 
 到此而言，栈的学习就告一段落了。因为源代码中注释较多，所以这儿就不贴出源代码的内容了。有兴趣的可以自己下载查看。
-> [源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/Stack.js)
+> [栈-源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/Stack.js)
 
 ## 队列
 队列与栈是很相像的数据结构，不同之处在于队列是是先进先出(FIFO:First In First Out)的。
@@ -247,7 +247,7 @@ function hotPotato(nameList, num) {
 ```
 具体实现，有兴趣的同学可以自己下载源代码，试一试。
 
-> [源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/Queue.js)
+> [队列-源代码](https://github.com/Lxxyx/LearnDataStructrue/blob/master/Queue.js)
 
 队列的学习到此就告一段落了。下一期将讲述另外一种数据结构: 链表。
 
