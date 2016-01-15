@@ -14,7 +14,8 @@ tags: 前端
 ![单向链表图示2](http://7xoxxe.com1.z0.glb.clouddn.com/link1.png)
 ### JavaScipt中单向链表的实现
 首先，创建一个构造函数。
-```
+
+```javascript
 /**
  * 单向链表构造函数
  */
@@ -52,7 +53,7 @@ function LinkedList() {
 #### append方法:
 说明: 向单向链表尾部添加元素。
 实现: 
-```
+```javascript
 /**
  * 向单向链表尾部添加元素
  * @param  {Any} element 要加入链表的节点
@@ -79,7 +80,7 @@ this.append = function(element) {
 #### insert方法:
 说明: 向单向链表中某个位置插入元素。
 实现: 
-```
+```javascript
 /**
  * 向单向链表中插入某个元素
  * @param  {Number} position 要插入的位置
@@ -116,7 +117,7 @@ this.insert = function(position, element) {
 #### indexOf方法: 
 说明：寻找某个元素在单向链表中的位置。
 实现: 
-```
+```javascript
 /**
  * 寻找某个元素在单向链表中的位置
  * @param  {Any} element 要寻找的元素
@@ -140,7 +141,7 @@ this.indexOf = function(element) {
 #### remove方法:
 说明: 移除给定的元素。
 实现: 
-```
+```javascript
 /**
  * 移除给定的元素
  * @param  {Any} element 要移除的元素
@@ -154,7 +155,7 @@ this.remove = function(element) {
 #### removeAt方法:
 说明:移除单向链表中某个位置的元素。
 实现: 
-```
+```javascript
 /**
  * 移除单向链表中某一个元素
  * @param  {Number} position 要移除元素的位置
@@ -192,7 +193,7 @@ this.removeAt = function(position) {
 #### getHead方法:
 说明:获取单向链表的头部。
 实现: 
-```
+```javascript
 /**
  * 获取单向链表的头部
  * @return {Any} 单向链表的头部
@@ -203,7 +204,7 @@ this.getHead = function() {
 ```
 #### isAmpty、toString、size方法
 实现: 
-```
+```javascript
 /**
  * 判断单向链表是否为空
  * @return {Boolean} 为空则返回true，不为空则返回false
@@ -244,7 +245,7 @@ this.size = function() {
 如图所示: ![双向链表图示](http://7xoxxe.com1.z0.glb.clouddn.com/dlink.png)
 ### JavaScipt中双向链表的实现
 首先，依然是构造函数:
-```
+```javascript
 /**
  * 双向链表的构造函数
  */
@@ -279,7 +280,7 @@ function DoublyLinkedList() {
 #### append方法:
 说明: 添加元素到双向链表尾部
 实现: 
-```
+```javascript
 /**
  * 向链表尾部添加元素
  * @param  {Any} element 要加入链表的节点
@@ -311,7 +312,7 @@ this.append = function(element) {
 #### insert方法:
 说明: 向双向链表中某个位置插入元素。
 实现: 
-```
+```javascript
 /**
  * 向链表中插入某个元素
  * @param  {Number} position 要插入的位置
@@ -364,7 +365,7 @@ this.insert = function(position, element) {
 #### removeAt方法:
 说明:移除双向链表中某个位置的元素。
 实现: 
-```
+```javascript
 /**
  * 移除链表中某一个元素
  * @param  {Number} position 要移除元素的位置
@@ -405,7 +406,7 @@ this.removeAt = function(position) {
 ```
 #### showHead、showLength、showTail方法
 实现: 
-```
+```javascript
 /**
  * 获取链表的头部
  * @return {Any} 链表的头部
