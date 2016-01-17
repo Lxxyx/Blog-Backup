@@ -2,7 +2,7 @@ title: 寒假前端学习(5)——学习JavaScript数据结构与算法（三）
 date: 2016-01-16 09:47:33
 tags: 前端
 ---
-> 本系列的第一篇文章: [学习JavaScript数据结构与算法（一）：栈与队列](http://t.cn/R4Op9cq)
+> 本系列的第一篇文章: [学习JavaScript数据结构与算法（一）：栈与队列](http://t.cn/R4Ybrs0)
 > 第二篇文章：[学习JavaScript数据结构与算法（二）：链表](http://t.cn/R4W3y3X)
 
 ## 集合(Set)
