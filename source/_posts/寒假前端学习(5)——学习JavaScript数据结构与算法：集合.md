@@ -4,6 +4,8 @@ tags: 前端
 ---
 > 本系列的第一篇文章: [学习JavaScript数据结构与算法（一）：栈与队列](http://t.cn/R4Ybrs0)
 > 第二篇文章：[学习JavaScript数据结构与算法（二）：链表](http://t.cn/R4W3y3X)
+> 第三篇文章: [学习JavaScript数据结构与算法（三）：集合](http://t.cn/R4jLf0o)
+> 第四篇文章: [学习JavaScript数据结构与算法（四）：二叉搜索树](http://t.cn/R4QbVOg)
 
 ## 集合(Set)
 说起集合，就想起刚进高中时，数学第一课讲的就是集合。因此在学习集合这种数据结构时，倍感亲切。

@@ -5,6 +5,7 @@ tags: 前端
 > 本系列的第一篇文章: [学习JavaScript数据结构与算法（一）：栈与队列](http://t.cn/R4Ybrs0)
 > 第二篇文章：[学习JavaScript数据结构与算法（二）：链表](http://t.cn/R4W3y3X)
 > 第三篇文章: [学习JavaScript数据结构与算法（三）：集合](http://t.cn/R4jLf0o)
+> 第四篇文章: [学习JavaScript数据结构与算法（四）：二叉搜索树](http://t.cn/R4QbVOg)
 
 ## 我与二叉树的前尘往事
 在刚学编程时，就知道有一种数据结构叫“树”，树中的翘楚是“二叉树”，“红黑树”等。
