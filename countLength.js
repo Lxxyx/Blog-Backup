@@ -1,7 +1,6 @@
 /**
  * 计算所写博客字数。Node直接运行即可。
  */
-
 var fs = require('fs');
 
 var totalLength = 0;
