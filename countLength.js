@@ -14,8 +14,8 @@ var getDirFilesArray = function(path) {
       } else {
         reject(err)
       }
-    })
-  })
+    });
+  });
 };
 
 var getFileLength = function(fileName) {
@@ -26,8 +26,8 @@ var getFileLength = function(fileName) {
       } else {
         reject(err)
       }
-    })
-  })
+    });
+  });
 };
 
 getDirFilesArray(commonPath)
@@ -42,4 +42,4 @@ getDirFilesArray(commonPath)
   })
   .catch((error) => {
     console.log(error)
-  })
+  });
