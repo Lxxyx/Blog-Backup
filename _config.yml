@@ -81,5 +81,5 @@ theme: yilia
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@gitcafe.com:Lxxyx/Lxxyx.git
+  repo: git@git.coding.net:Lxxyx/Lxxyx.git
   branch: gitcafe-pages
