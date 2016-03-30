@@ -17,7 +17,7 @@ tags: 前端
 ![交集、并集、差集](http://7xoxxe.com1.z0.glb.clouddn.com/set.png)
 ### JavaScipt中集合的实现
 首先，创建一个构造函数。
-```
+```javascript
 /**
  * 集合的构造函数
  */
@@ -45,7 +45,7 @@ function Set方法 {
 #### has方法:
 说明:集合中元素是不重复的。所以在其它任何操作前，必须用has方法确认集合是否有某个元素。这儿使用了hasOwnProperty方法来检测。
 实现:
-```
+```javascript
 /**
  * 检测集合内是否有某个元素
  * @param  {Any}  value    要检测的元素
@@ -60,7 +60,7 @@ this.has = function(value) {
 #### add方法:
 说明: 给集合内添加某个元素。
 实现: 
-```
+```javascript
 /**
  * 给集合内添加某个元素
  * @param {Any} value 要被添加的元素
@@ -79,7 +79,7 @@ this.add = function(value) {
 #### remove方法:
 说明: 移除集合中某个元素
 实现:
-```
+```javascript
 /**
  * 移除集合中某个元素
  * @param  {Any} value 要移除的元素
@@ -98,7 +98,7 @@ this.remove = function(value) {
 ####clear方法:
 说明: 清空集合
 实现: 
-```
+```javascript
 /**
  * 清空集合
  */
@@ -109,7 +109,7 @@ this.clear = function() {
 #### size方法
 说明: 返回集合长度，这儿有两种方法。第一种方法使用了Object.keys这个Api，但只支持IE9及以上。第二种则适用于所有浏览器。
 实现:
-```
+```javascript
 /**
  * 返回集合长度，只可用于IE9及以上
  * @return {Number} 集合长度
@@ -137,7 +137,7 @@ this.sizeLegacy = function() {
 #### values方法
 说明: 返回集合转换的数组，这儿也有两种方法。理由同上。使用了Object.keys，只能支持IE9及以上。
 实现:
-```
+```javascript
 /**
  * 返回集合转换的数组，只可用于IE9及以上
  * @return {Array} 转换后的数组
@@ -161,7 +161,7 @@ this.valuesLegacy = function() {
 #### union方法
 说明: 返回两个集合的并集
 实现:
-```
+```javascript
 /**
  * 返回两个集合的并集
  * @param  {Set} otherSet 要进行并集操作的集合
@@ -190,7 +190,7 @@ this.union = function(otherSet) {
 #### intersection方法
 说明: 返回两个集合的交集
 实现:
-```
+```javascript
 /**
  * 返回两个集合的交集
  * @param  {Set} otherSet 要进行交集操作的集合
@@ -215,7 +215,7 @@ this.intersection = function(otherSet) {
 #### difference方法
 说明: 返回两个集合的差集
 实现:
-```
+```javascript
 /**
  * 返回两个集合的差集
  * @param  {Set} otherSet 要进行差集操作的集合
@@ -240,7 +240,7 @@ this.difference = function(otherSet) {
 #### subset方法
 说明: 判断该集合是否为传入集合的子集。这段代码在我自己写完后与书上一比对，觉得自己超级low。我写的要遍历数组三次，书上的只需要一次，算法复杂度远远低于我的。
 实现:
-```
+```javascript
 /**
  * 判断该集合是否为传入集合的子集
  * @param  {Set} otherSet 传入的集合

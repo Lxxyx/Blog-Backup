@@ -6,7 +6,7 @@ tags: 前端
 项目中需要一个发表公告的框，于是就写了一个。
 两个输入组件的代码如下。
 一个是input,一个是textarea。
-```
+```html
 <input type="text" id="noticeTitle" />
 <textarea id="noticeContent" placeholder="请输入公告内容">
 </textarea>
@@ -17,7 +17,7 @@ tags: 前端
 然后需要在点击发布时，把输入的内容通过ajax传送给后台。
 之前习惯了jQuery，直接使用val()函数。
 
-```
+```javascript
 var title = $("#noticeTitle").val();
 var content = $("noticeContent").val();
 
@@ -28,7 +28,7 @@ $.ajax…………
 ## JS重写
 之前以为很困难来着，结果没想到这么简单。
 通过javascript的value属性，就可以直接获得输入框的值。
-```
+```javascript
 var title = document.getElementById("noticeTitle").value;
 var content = document.getElementById("noticeContent").value;
 ```

@@ -24,7 +24,7 @@ tags: 前端
 ### 1.作为对象的方法调用
 说明：作为对象方法调用时，this指向该对象。
 举例：
-```JavaScript
+```javascript
 /**
  * 1.作为对象的方法调用
  *
@@ -44,7 +44,7 @@ obj.getA(); // true , 1
 ### 2.作为普通函数调用
 说明：作为普通函数调用时，this总是指向全局对象(浏览器中是window)。
 举例：
-```JavaScript
+```javascript
 /**
  * 2.作为普通函数调用
  *
@@ -77,7 +77,7 @@ theName(); // 'globalName'
 ### 3.构造器调用
 说明：作为构造器调用时，this指向返回的这个对象。
 举例：
-```JavaScript
+```javascript
 /**
  * 3.作为构造器调用
  * 
@@ -96,7 +96,7 @@ console.log(obj) // myClass {name: "Lxxyx"}
 
 但是如果构造函数中手动指定了return其它对象，那么this将不起作用。
 如果return的是别的数据类型，则没有问题。
-```JavaScript
+```javascript
 var myClass = function() {
   this.name = "Lxxyx";
   // 加入return时，则返回的是别的对象。this不起作用。
@@ -119,7 +119,7 @@ Apply：第一个参数为this的指向，第二个参数为数组，一次性�
 ### 1.改变this指向
 说明：这是call和apply最常用的用途了。用于改变函数体内this的指向。
 举例：
-```JavaScript
+```javascript
 var name = "GlobalName"
 
 var func = function() {
@@ -140,7 +140,7 @@ func.apply(obj) // "Lxxyx" 将this指向obj
 ```
 ### 2.借用其它对象的方法
 这儿，我们先以一个立即执行匿名函数做开头：
-```
+```javascript
 (function(a, b) {
   console.log(arguments) // 1,2
   // 调用Array的原型方法
@@ -151,7 +151,7 @@ func.apply(obj) // "Lxxyx" 将this指向obj
 函数具有arguments属性，而arguments是一个类数组。
 但是arguments是不能直接调用数组的方法的，所以我们要用call或者apply来调用Array对象的原型方法。
 原理也很容易理解，比如刚才调用的是push方法，而push方法在谷歌的v8引擎中，源代码是这样的：
-```
+```javascript
 function ArrayPush() {
   var n = TO_UINT32(this.length); // 被push对象的长度
   var m = % _ArgumentsLength(); // push的参数个数

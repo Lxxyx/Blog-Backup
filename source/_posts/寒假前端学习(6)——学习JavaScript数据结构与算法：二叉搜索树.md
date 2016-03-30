@@ -42,7 +42,7 @@ tags: 前端
 而我们本文要学习的内容，就是如何写一个二叉搜索树。
 ### JavaScipt中二叉搜索树的实现
 首先，创建一个构造函数。
-```
+```javascript
 /**
  * 二叉搜索树的构造函数
  */
@@ -87,7 +87,7 @@ function BinarySearchTree() {
 #### insert方法:
 说明:向树中插入一个新的键
 实现:
-```
+```javascript
 /**
  * 插入某个键到二叉树中
  * @param  {Number} key 要插入的键值
@@ -133,7 +133,7 @@ var insertNode = function(node, newNode) {
 #### inOrderTraverse方法:
 说明:通过中序遍历方式，遍历所有节点
 实现:
-```
+```javascript
 /**
  * 中序遍历操作，常用于排序。会把树中元素从小到大的打印出来。
  * 因为在javascript的递归中，遇到递归是，会优先调用递归的函数。直到递归不再进行。
@@ -175,7 +175,7 @@ inOrderTraverse(printNode) // 输出排序后树的值
 #### preOrderTranverse方法:
 说明:通过先序遍历方式，遍历所有节点
 实现:
-```
+```javascript
 /**
  * 前序遍历操作，常用于打印一个结构化的文档
  * @param  {Function} callback 获取到节点后的回调函数
@@ -200,7 +200,7 @@ var preOrderTranverseNode = function(node, callback) {
 #### postOrderTranverse方法:
 说明:通过后序遍历方式，遍历所有节点
 实现:
-```
+```javascript
 /**
  * 后序遍历操作，常用于计算所占空间
  * @param  {Function} callback 获取到节点后的回调函数
@@ -223,7 +223,7 @@ var postOrderTranverseNode = function(node, callback) {
 #### min方法:
 说明:返回树中最小的值，由二叉搜索树的性质易知，最左侧的为最小值。则只需取得最左侧的值即可。
 实现:
-```
+```javascript
 /**
  * 返回树中最小的值
  * @return {Function} min函数的辅助函数
@@ -252,7 +252,7 @@ var minNode = function(node) {
 #### max方法:
 说明:返回树中最大的值，由min函数易知，最大值在最右侧。
 实现:
-```
+```javascript
 /**
  * 返回树中最大的值
  * @return {Function} max函数的辅助函数
@@ -279,7 +279,7 @@ var maxNode = function(node) {
 #### search方法:
 说明: 搜索某个值，在树中则返回true
 实现: 
-```
+```javascript
 /**
  * 搜索某个值是否存在于树中
  * @param  {Node} key 搜索开始的节点，默认为root
@@ -316,7 +316,7 @@ var searchNode = function(node, key) {
 3. 有两个子节点的节点
 因为要应付不同的场景，所以这是最麻烦的方法了。让我思考了好久才理解。如果你觉得看不懂的话，可以下载源代码把这一段写一遍。
 实现: 
-```
+```javascript
 /**
  * 从树中移除某个键
  * @param  {Key} key 要移除的键值

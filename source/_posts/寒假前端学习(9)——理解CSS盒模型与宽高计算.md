@@ -22,7 +22,7 @@ tags: 前端
 盒模型的宽度计算，不复杂但也不好玩。因为一个盒模型的宽度，不只是计算其content的宽度，还会加上元素的边框与内边距。
 
 用个demo，就很好理解了。在demo中，两个div的宽度是一致的。(demo出处在底部)
-```
+```html
 .simple {
   width: 500px;
   margin: 20px auto;
