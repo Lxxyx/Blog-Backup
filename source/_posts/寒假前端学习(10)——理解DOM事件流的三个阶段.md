@@ -107,6 +107,9 @@ window.addEventListener('click', function() {
 ### 阻止事件冒泡
 事件冒泡过程，是可以被阻止的。防止事件冒泡而带来不必要的错误和困扰。
 这个方法就是:`stopPropagation()`
+> stopPropagation() 方法
+终止事件在传播过程的捕获、目标处理或起泡阶段进一步传播。调用该方法后，该节点上处理该事件的处理程序将被调用，事件不再被分派到其他节点。
+
 我们对`button`的click事件做一些改造。
 ```javascript
 button.addEventListener('click', function(event) {
