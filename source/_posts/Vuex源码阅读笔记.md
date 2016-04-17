@@ -2,7 +2,7 @@ title: Vuex源码阅读笔记
 date: 2016-04-17 09:41:19
 tags: 前端
 ---
-> 笔记中的Vue与Vuex版本为1.0.21和0.6.2,需要阅读者有使用Vue与Vuex的经验。
+> 笔记中的Vue与Vuex版本为1.0.21和0.6.2,需要阅读者有使用Vue，Vuex，ES6的经验。
 
 ## 起因
 俗话说得好，没有无缘无故的爱，也没有无缘无故的恨，更不会无缘无故的去阅读别人的源代码。
@@ -118,6 +118,7 @@ const { store, vuex } = options
 也就是写Vue组件时的：
 `export default {……一些配置}`
 这里，就把Vue配置项的store和vuex抽离出来了。
+### 搜寻store
 接下来，则看到了Vuex源代码的精妙之处：
 ```javascript
 // store injection
@@ -127,4 +128,68 @@ if (store) {
   this.$store = options.parent.$store
 }
 ```
-解构赋值并不是一定成功的，如果store在options中不存在，那么store就会是undefined。
+解构赋值并不是一定成功的，如果store在options中不存在，那么store就会是undefined。但是我们需要找store。
+于是Vuex提供了向父级（Vue中的功能）寻找store的功能。不难看出，这儿父级的$store如果不存在，那么其实他也会到自己的父级去寻找。直到找到为止。
+就想一条锁链一样，一层一层的连到最顶部store。所以在没有找到时，Vuex会给你报个错误。
+
+```javascript
+// 声明了Vuex但没有找到store时的状况
+if (vuex) {
+  if (!this.$store) {
+    console.warn(
+      '[vuex] store not injected. make sure to ' +
+      'provide the store option in your root component.'
+    )
+  }
+```
+### 对Vuex声明的内容，进行改造
+接下来，则是对Vuex声明的内容，进行改造。
+首先的是获取Vuex对象的内容：
+```javascript
+let { state, getters, actions } = vuex
+```
+同时，在这儿还看到了对过时API的处理。感觉算是意料之外的惊喜。
+```javascript
+// handle deprecated state option
+// 如果使用state而不是getters来获取Store的数据，则会提示你state已经过时的，你需要使用新的api。
+// 但是，这儿也做了兼容，确保升级时服务不会挂掉。
+if (state && !getters) {
+  console.warn(
+    '[vuex] vuex.state option will been deprecated in 1.0. ' +
+    'Use vuex.getters instead.'
+  )
+  getters = state
+}
+```
+接下来，则是对getters和actions的处理：
+```javascript
+// getters
+if (getters) {
+  options.computed = options.computed || {}
+  for (let key in getters) {
+    defineVuexGetter(this, key, getters[key])
+  }
+}
+// actions
+if (actions) {
+  options.methods = options.methods || {}
+  for (let key in actions) {
+    options.methods[key] = makeBoundAction(this.$store, actions[key], key)
+  }
+}
+```
+可以看出，在这儿对getters和actions都进行了额外处理。
+在这儿，我们讲述actions的额外处理，至于getters，涉及了过多的Vue，而我不是很熟悉。等我多钻研后，再写吧。
+## Actions的改造
+对整个Actions的改造，首先是Vuex的检测：
+```javascript
+// actions
+if (actions) {
+  // options.methods是Vue的methods选项
+  options.methods = options.methods || {}
+  for (let key in actions) {
+    options.methods[key] = makeBoundAction(this.$store, actions[key], key)
+  }
+}
+```
+在这儿，我们一点一点的剖析。可以看出，所有的actions，都会被`makeBoundAction`函数处理，并加入Vue的methos选项中。
