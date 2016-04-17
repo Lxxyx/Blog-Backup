@@ -192,4 +192,38 @@ if (actions) {
   }
 }
 ```
-在这儿，我们一点一点的剖析。可以看出，所有的actions，都会被`makeBoundAction`函数处理，并加入Vue的methos选项中。
+在这儿，我们一点一点的剖析。可以看出，所有的actions，都会被`makeBoundAction`函数处理，并加入Vue的methods选项中。
+那么看来，`makeBoundAction`函数就是我要找的答案了。
+接下来贴出`makeBoundAction`函数的源代码：
+
+```javascript
+/**
+ * Make a bound-to-store version of a raw action function.
+ *
+ * @param {Store} store
+ * @param {Function} action
+ * @param {String} key
+ */
+
+function makeBoundAction(store, action, key) {
+  if (typeof action !== 'function') {
+    console.warn(`[vuex] Action bound to key 'vuex.actions.${key}' is not a function.`)
+  }
+  return function vuexBoundAction(...args) {
+    return action.call(this, store, ...args)
+  }
+}
+```
+
+事情到这儿，其实已经豁然明朗了。
+我在Vuex中传入的actions，实际会被处理为`vuexBoundAction`，并加入options.methods中。
+在调用这个函数时，实际上的action会使用call，来改变this指向并传入store作为第一个参数。而store是有dispatch这个函数的。
+那么，在我传入`{dispatch}`时，自然而然就会解构赋值。
+这样的话，也形成了闭包，确保action能访问到store。
+
+## 结语
+今天应该算是解决了心中的一个大疑惑，还是那句话：
+> 没有无缘无故的爱，也没有无缘无故的恨，更没有无缘无故冒出来的代码。
+
+整个源代码读下来一遍，虽然有些部分不太理解，但是对ES6和一些代码的使用的理解又加深了一步。比如这回就巩固了我关于ES6解构赋值的知识。而且还收获了很多别的东西。总而言之，收获颇丰~
+最后的，依然是那句话：前端路漫漫，且行且歌。
