@@ -6,7 +6,7 @@
     "version": "3.2.0"
   },
   "scripts": {
-    "start": "hexo g && hexo d && git add -A && git commit -m 'auto back up' && git push -u origin master"
+    "start": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push"
   },
   "dependencies": {
     "hexo": "^3.1.0",
