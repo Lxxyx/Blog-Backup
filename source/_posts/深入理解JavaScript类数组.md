@@ -1,4 +1,4 @@
-title: 理解JavaScript的数组与类数组
+title: 深入理解JavaScript类数组
 date: 2016-05-07 10:28:49
 tags: 前端
 ---
@@ -128,6 +128,7 @@ console.log(func[0]) // 'I\'m a func'
 // Appends the arguments to the end of the array and returns the new
 // length of the array. See ECMA-262, section 15.4.4.7.
 function ArrayPush() {
+  // 获取要处理的数组
   var array = TO_OBJECT(this);
   // 获取数组长度
   var n = TO_LENGTH(array.length);
@@ -146,4 +147,14 @@ function ArrayPush() {
   return new_length;
 }
 ```
-是的，整个push函数，并没有涉及是否是数组的问题。只关心了length
+是的，**整个push函数，并没有涉及是否是数组的问题。只关心了length。而因为其对象的特性，所以可以使用方括号来设置属性。**
+
+这也是万物皆类型和鸭子类型最生动的体现。
+
+## 总结
+JavaScript中的类数组的特殊性，是由其“万物皆类型”和“鸭子类型”决定的，而浏览器引擎底层的实现，更是佐证了这一点。
+而先前说我的那位同学，因为只是知道类数组的几种表现和用法，并且想通过apply来打我脸，证明我根本没有仔细看书。这种行为不仅不友善，而且学习效率也不高。
+因为，**知其然而不知其所以然是不可取的**。特别是发现很多这种例子，就得学会归纳总结。（感谢winter老师的演讲：[一个前端的自我修养](http://taobaofed.org/blog/2016/03/23/the-growth-of-front-end/)，教会我很多东西。）。
+很多时候，深入看看源代码也会让你对这个理解的更透彻。将来就算是蹦出一百种类数组，也能知道是怎么回事儿。
+
+最后，还是开头那句话：“都是搞技术的，和善一点不行吗？有问题就好好交流，不要总想着打别人脸啊…………”
