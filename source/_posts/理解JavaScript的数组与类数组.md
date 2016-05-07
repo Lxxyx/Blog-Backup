@@ -86,17 +86,14 @@ console.log(arrFunc2, arrFunc2.length) // ([undefined × 2], 2)
 ```
 
 可以看出，**函数也有length属性，其值等于函数要接收的参数。**
-> 注：不适用于ES6的rest参数。具体原因和表现这儿就不再阐述了，不属于本文讨论范围。可参见 [《rest参数 - ECMAScript 6 入门》](http://es6.ruanyifeng.com/#docs/function#rest参数)。
+> 注：不适用于ES6的rest参数。具体原因和表现这儿就不再阐述了，不属于本文讨论范围。可参见 [《rest参数 - ECMAScript 6 入门》](http://es6.ruanyifeng.com/#docs/function#rest参数)。另外arguments在ES6中，被rest参数代替了，所以这儿不作为例子。
 
 而length属性大于0时，如果转为数组，则数组里的值会是undefined。个数等于函数length的长度。
 
-## 类数组的原理
-类数组的原理，主要有以下两点：
-第一点是JavaScript的“万物皆对象”概念，
-
-
-第二点则是JavaScript支持的“鸭子类型”，具体概念如下：
-> 如果它走起来像鸭子，而且叫起来像鸭子，那么它就是鸭子。
+## 类数组的实现原理
+类数组的实现原理，主要有以下两点：
+第一点是JavaScript的“万物皆对象”概念。
+第二点则是JavaScript支持的“鸭子类型”。
 
 首先，从第一点开始解释。
 
@@ -104,4 +101,24 @@ console.log(arrFunc2, arrFunc2.length) // ([undefined × 2], 2)
 万物皆对象具体解释如下：
 > 在JavaScript中，“一切皆对象”，数组和函数本质上都是对象，就连三种原始类型的值——数值、字符串、布尔值——在一定条件下，也会自动转为对象，也就是原始类型的“包装对象”。
 
+而另外一个要点则是，所有对象都继承于Object。所以都能调用对象的方法，比如使用点和方括号访问属性。
+比如说，这样的：
 
+```javascript
+let func = function() {}
+console.log(func instanceof Object) // true
+func[0] = 'I\'m a func'
+console.log(func[0]) // 'I\'m a func'
+```
+
+### 鸭子类型
+万物皆对象具体解释如下：
+> 如果它走起来像鸭子，而且叫起来像鸭子，那么它就是鸭子。
+
+比如说上面举的类数组例子，虽然他们是对象/函数，但是只要有length属性和对应的数字下标，那么他们就是数组。
+
+但是，在这儿，还是有些迷糊的。为什么使用`call/apply`借用数组方法就能处理这些类数组呢？
+
+## 探秘V8
+一开始，我也对这个犯迷糊啊。直到我去Github上，看到了谷歌V8引擎处理数组的源代码。
+地址在这儿：[v8/array.js](https://github.com/v8/v8/blob/master/src/js/array.js)
