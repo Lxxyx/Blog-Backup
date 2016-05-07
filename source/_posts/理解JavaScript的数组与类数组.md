@@ -122,3 +122,28 @@ console.log(func[0]) // 'I\'m a func'
 ## 探秘V8
 一开始，我也对这个犯迷糊啊。直到我去Github上，看到了谷歌V8引擎处理数组的源代码。
 地址在这儿：[v8/array.js](https://github.com/v8/v8/blob/master/src/js/array.js)
+作为讲述，我们在这里引用push的源代码（方便讲述，删除部分。slice的比较长，但是原理一致）：
+
+```javascript
+// Appends the arguments to the end of the array and returns the new
+// length of the array. See ECMA-262, section 15.4.4.7.
+function ArrayPush() {
+  var array = TO_OBJECT(this);
+  // 获取数组长度
+  var n = TO_LENGTH(array.length);
+  // 获取函数参数长度
+  var m = arguments.length;
+
+  for (var i = 0; i < m; i++) {
+    // 将函数参数push进数组
+    array[i+n] = arguments[i];
+  }
+
+  // 修正数组长度
+  var new_length = n + m;
+  array.length = new_length;
+  // 返回值是数组的长度
+  return new_length;
+}
+```
+是的，整个push函数，并没有涉及是否是数组的问题。只关心了length
