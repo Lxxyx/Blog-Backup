@@ -1,4 +1,4 @@
-title: Always bet on f2e
+title: Always bet on F2E
 date: 2016-05-01 09:12:31
 tags: 随笔
 ---
