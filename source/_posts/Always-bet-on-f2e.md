@@ -32,16 +32,16 @@ tags: 随笔
 
 我都喜欢做前端啊，直接与用户交互的，决定用户体验好坏的前端，需要懂得计算机基础，也要理解设计、交互、产品、后台知识的前端啊。
 
-## Always bet on f2e
+## Always bet on F2E
 曾经看过一个slides，最后有这么一些话：
 ![Always bet on js](http://7xoxxe.com1.z0.glb.clouddn.com/bet.png)
 这些话是Brendan Eich，也就是JavaScript之父说的。
 
-这也是我想说的话：Always bet on f2e.
+这也是我想说的话：Always bet on F2E.
 可能有人会说，这样会不会太过偏激，知识面狭窄？
 
 我喜欢编程，因为写代码就是一件很开心的事情。只是更加偏向于前端。
 于是我决定了，这就是我编程学习的方向，不再迷茫Java好还是C#的语法优雅又或是XXX的发展前途广。
 因为有用户交互的地方，就有前端。而语言只是其实现方式而已。
 
-**So,always bet on f2e**
+**So,always bet on F2E**
