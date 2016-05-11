@@ -12,10 +12,8 @@ tags: 前端
 不过这个话题也引起了我的注意，问了问身边很多前端同学关于数组与类数组的区别。他们都表示不太熟悉，所以决定写一篇博客，来分享我对数组与类数组的理解。
 
 ## 什么是类数组
-类数组的定义，有如下两条：
-  
-* 具有：指向对象元素的数字索引下标以及 length 属性告诉我们对象的元素个数
-* 不具有：诸如 push 、 forEach 以及 indexOf 等数组对象具有的方法Q
+类数组的定义，只有一条：
+  有length属性。
 
 这儿有三个典型的JavaScript类数组例子。
 
@@ -80,7 +78,7 @@ let arrFunc1 = Array.prototype.slice.call(arrayLikeFunc1, 0)
 console.log(arrFunc1, arrFunc1.length) // ([], 0)
 
 let arrayLikeFunc2 = function (a, b) {}
-console.log(arrayLikeFunc1.length) // 2
+console.log(arrayLikeFunc2.length) // 2
 let arrFunc2 = Array.prototype.slice.call(arrayLikeFunc2, 0)
 console.log(arrFunc2, arrFunc2.length) // ([undefined × 2], 2)
 ```
@@ -115,7 +113,8 @@ console.log(func[0]) // 'I\'m a func'
 万物皆对象具体解释如下：
 > 如果它走起来像鸭子，而且叫起来像鸭子，那么它就是鸭子。
 
-比如说上面举的类数组例子，虽然他们是对象/函数，但是只要有length属性和对应的数字下标，那么他们就是数组。
+比如说上面举的类数组例子，虽然他们是对象/函数，但是只要有length属性，能当数组用，那么他们就是数组。
+是什么，不是什么对鸭子类型来说，一点也不重要。能做什么，才是鸭子类型的核心。（谢谢nightre大大的指正）
 
 但是，在这儿，还是有些迷糊的。为什么使用`call/apply`借用数组方法就能处理这些类数组呢？
 
