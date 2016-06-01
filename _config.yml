@@ -83,6 +83,3 @@ deploy:
 - type: git
   repo: git@git.coding.net:Lxxyx/Lxxyx.git
   branch: gitcafe-pages
-- type: git
-  repo: git@github.com:Lxxyx/lxxyx.github.io.git
-  branch: master
