@@ -39,3 +39,4 @@ tags: 随笔
 ## 博客迁移至Coding.net 2016.2.*（具体日期不记得了）
 GitCafe被Coding.net，故博客迁移至Coding.net。
 Coding.net的速度还是很快的。
+## 购买iPic，专门用于写博客。2016.07.26

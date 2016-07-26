@@ -170,5 +170,5 @@ function ArrayPush() {
 通过对这部分的学习，算是加深了对JavaScript的理解。最直观的表现就是，去看一些优秀框架的源代码时，不再是被this,call,apply,bind绕的晕乎乎的。还是很开心的~
 
 下一段时间，准备深入探索一下日常学习和使用的CSS。毕竟JavaScript学了，HTML和CSS也不能落下。
-
+---
 前端路漫漫，且行且歌。
