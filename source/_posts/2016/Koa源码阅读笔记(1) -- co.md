@@ -1,4 +1,4 @@
-title: co源代码阅读笔记
+title: Koa源码阅读笔记(1) -- co
 date: 2016-07-27 09:32:42
 tags: 前端
 ---
@@ -132,7 +132,7 @@ function toPromise(obj) {
 看完了源代码，对`generator`函数有更深的理解，也理解了co的运行机制。
 ### 自动执行generator
 首先解决的问题则是自动执行`generator`函数是如何实现的。
-这儿的核心部分则在于: 
+这儿的核心部分则在于:
 
 ```javascript
 function co(gen) {
@@ -175,11 +175,47 @@ if (value && isPromise(value)) {
 同时通过`onFulfilled`函数，则可以实现自动调用。
 这也就能解释为什么co基于`Promise`。且能自动执行了。
 
+### co.wrap的运行机制
+首先，先放上co.wrap的源代码：
+
+```javascript
+co.wrap = function (fn) {
+  createPromise.__generatorFunction__ = fn;
+  return createPromise;
+  function createPromise() {
+    // arguments是createPromise()这个函数传入的。
+    return co.call(this, fn.apply(this, arguments));
+  }
+};
+```
+
+使用方法也很简单：
+
+```javascript
+var fn = co.wrap(function* (val) {
+  console.log('this is fn')
+  return yield Promise.resolve(val);
+});
+
+fn(true).then(function (val) {
+
+});
+```
+
+然而在这里，我差点想破了脑袋。一直不理解，但执行`co.call(this, fn.apply(this, arguments));`这一句时，为什么fn没有实际运行，控制台也没有输出`'this is fn'`的提示信息。百思不得其解。
+然后在苦思冥想，写了好几个demo后，才发现了问题所在。
+因为`co.wrap()`需要传入一个`generator`函数。而`generator函数`在运行时时不会自动执行的。
+这一点，阮一峰的《ECMAScript 6入门》中有提及。
+
+> 不同的是，调用Generator函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象。需要手动调用它的next()方法。
+
+而剩下的步骤，就是把这个对象传入co，开始自动执行。
+
 ## 结语
 co的源代码读取来不难，但其处理方式却令人赞叹。
 而且`generator`函数的使用，对ES7中的`Async/Await`的产生，起了关键作用。
 正如其作者TJ在co的说明文档中所说的那样：
-> Co is a stepping stone towards ES7 async/await. 
+> Co is a stepping stone towards ES7 async/await.
 
 虽然说我没用过co，只使用过`Async/Await`。
 但如今的`Async/Await`，使用babel，启用[transform-async-to-generator](http://babeljs.io/docs/plugins/transform-async-to-generator/)插件，转译后，也是编译为`generator`函数。
