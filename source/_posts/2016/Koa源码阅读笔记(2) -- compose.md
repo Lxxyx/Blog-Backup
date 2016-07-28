@@ -1,5 +1,5 @@
 title: Koa源码阅读笔记(2) -- compose
-date: 2016-07-27 19:05:05
+date: 2016-07-28 19:05:05
 tags: 前端
 ---
 ![2016-07-27_19:11:39.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-07-27_19:11:39.jpg)
@@ -70,7 +70,7 @@ function compose(middleware){
   return function *(next){
     // next不存在时，调用一个空的generator函数
     if (!next) next = noop();
-    
+
     var i = middleware.length;
     // 倒序处理中间件，给每个中间件传入next参数
     // 而next则是下一个中间件
