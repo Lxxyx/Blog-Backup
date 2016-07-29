@@ -28,7 +28,7 @@ app.use(function * (next) {
 app.listen(3000) 
 ```
 
-在上一节对[koa-compose的分析](http://www.lxxyx.win/2016/07/28/2016/Koa%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(2)%20--%20compose/)中，解决了我一个问题，那就是使用中间件时，那个`next`参数是如何来的。
+在上一节对[koa-compose的分析](http://t.cn/RtVApVz)中，解决了我一个问题，那就是使用中间件时，那个`next`参数是如何来的。
 这一节也会解决一个问题，那就是中间件中的`this`是如何来的。
 
 ## 有意思的地方
@@ -175,7 +175,7 @@ var ctx = self.createContext(req, res);
 
 ### 中间件的处理
 
-在第一节[Koa源码阅读笔记(1) -- co](http://www.lxxyx.win/2016/07/27/2016/Koa%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(1)%20--%20co/)中，已经解释了`co.wrap`的作用。
+在第一节[Koa源码阅读笔记(1) -- co](http://t.cn/RtVA9Br)中，已经解释了`co.wrap`的作用。
 这儿可以再看一次`compose`函数的源代码。
 
 ```javascript
