@@ -1,8 +1,7 @@
-<!-- title: Koa源码阅读笔记(3) -- 服务器の启动
+title: Koa源码阅读笔记(3) -- 服务器の启动与请求处理
 date: 2016-07-29 09:40:03
 tags: 前端
 ---
- -->
 
 ## 起因
 前两天阅读了Koa的基础`co`，和Koa中间件的基础`compose`。
@@ -87,6 +86,7 @@ var app = Application.prototype;
 app.listen = function () {}
 app.callback = function () {}
 ```
+
 写起来简洁，看起来也简洁。
 
 ## 服务器の启动流程
@@ -160,19 +160,21 @@ app.callback = function(){
 由于服务器启动后，中间件是固定的，所以像初始化中间件，保持this引用，注册事件这种无需多次触发或者高耗能事件，便放入闭包中好了。
 一次创建，多次使用。
 
-说到这儿想起一个问题，上次NodeParty, Koa演讲结束后，有人询问Koa能否根据请求做到动态加载中间价，当时他没回答出来。
-就源代码来看，是不能做到动态加载的。最多也只是在中间价内部做一些判断，从而决定是否跳过。
+说到这儿想起一个问题，上次NodeParty, Koa演讲结束后，有人询问Koa能否根据请求做到动态加载中间件，当时他没回答出来。
+就源代码来看，是不能做到动态加载的。最多也只是在中间件内部做一些判断，从而决定是否跳过。
 
 往下继续读，则可以看到这一行：
 
 ```javascript
 var ctx = self.createContext(req, res);
 ```
+
 在context中，是把一些常用方法挂载至ctx这个对象中。
 比如在koa中，直接调用`this.body = 'Hello World'`这种`response`的方法，或者通过`this.path`获得`request`的路径都是可行的。
 而不用像`Express`一般，`request`和`response`方法泾渭分明。同时在使用过程中，是明显有感觉到`Koa`比`Express`要便利的。而不仅仅是解决回调地狱那么简单。
 
-### 中间价的处理
+### 中间件的处理
+
 在第一节[Koa源码阅读笔记(1) -- co](http://www.lxxyx.win/2016/07/27/2016/Koa%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(1)%20--%20co/)中，已经解释了`co.wrap`的作用。
 这儿可以再看一次`compose`函数的源代码。
 
@@ -196,7 +198,7 @@ function compose(middleware){
 function *noop(){}
 ```
 
-在这里，中间件被倒序处理，保证第一个中间价的next参数为第二个中间价函数，第二个的next参数则为第三个中间价函数。以此类推。
+在这里，中间件被倒序处理，保证第一个中间件的next参数为第二个中间件函数，第二个的next参数则为第三个中间件函数。以此类推。
 而最后一个则以一个空的`generator`函数结尾。
 
 在这儿，有想了很久才想通的点，那就是`next = middleware[i].call(this, next);`时，middleware没有返回值，为什么next参数等于下一个函数。
@@ -285,4 +287,14 @@ fn是处理过的中间件函数，使用`call`将创建好的`ctx`对象作为`
 在整个处理过程中，心细的小伙伴还注意到了`onFinished`函数和`respond`函数。
 `onFinished`函数是一个Node的模块。[地址](https://github.com/jshttp/on-finished)。
 作用则是在请求结束或错误是自动调用。所以这儿把`ctx.onerror`这个错误处理函数传入，防止请求就直接是错的。
-而respond则是koa内部的函数，用于自动处理
+
+而respond则是koa内部的函数，用于处理在中间件内部经过处理的ctx对象，并发送响应。
+至此，Koa的启动和响应流程便完整的走了一遍。
+
+## 结语
+有些感慨，也有些唏嘘。
+有很多想说的，但也感觉没什么可说的。
+就这样吧。
+
+---
+前端路漫漫，且行且歌。
