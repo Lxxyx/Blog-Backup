@@ -95,6 +95,7 @@ app.callback = function () {}
 同时在Koa框架中，调用`listen`方法才能启动服务。
 那么服务器的启动流程就从`listen`方法开始。
 
+### 启动服务器
 首先是`listen`方法的源代码
 
 ```javascript
@@ -121,6 +122,8 @@ app.listen = function(){
 在这里，server 每次接收到请求，就会将其传入回调函数处理。
 同时listen方法执行完毕时，server便开始监听指定端口。
 所以在这里，`callback`便成为一个新的重点。
+
+### 处理响应
 
 继续放上`callback`的源代码（删除部分无用部分）：
 
@@ -169,6 +172,7 @@ var ctx = self.createContext(req, res);
 比如在koa中，直接调用`this.body = 'Hello World'`这种`response`的方法，或者通过`this.path`获得`request`的路径都是可行的。
 而不用像`Express`一般，`request`和`response`方法泾渭分明。同时在使用过程中，是明显有感觉到`Koa`比`Express`要便利的。而不仅仅是解决回调地狱那么简单。
 
+### 中间价的处理
 在第一节[Koa源码阅读笔记(1) -- co](http://www.lxxyx.win/2016/07/27/2016/Koa%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0(1)%20--%20co/)中，已经解释了`co.wrap`的作用。
 这儿可以再看一次`compose`函数的源代码。
 
@@ -195,3 +199,90 @@ function *noop(){}
 在这里，中间件被倒序处理，保证第一个中间价的next参数为第二个中间价函数，第二个的next参数则为第三个中间价函数。以此类推。
 而最后一个则以一个空的`generator`函数结尾。
 
+在这儿，有想了很久才想通的点，那就是`next = middleware[i].call(this, next);`时，middleware没有返回值，为什么next参数等于下一个函数。
+到后来才想通，中间件都是`generator`函数。generaotr会返回一个指向内部状态的指针对象。
+这一点我在co的阅读笔记用提及， 也在阮一峰的《ECMAScript 6入门》看到了。
+
+> 不同的是，调用Generator函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象。需要手动调用它的next()方法。
+
+但当时就是想不起来，结果睡了一觉就突然领悟了。= =
+最近也在上一门课，名称就叫《学习如何学习》，里面也有提到睡眠能帮自己整理记忆，遇到问题也不需要死钻牛角尖，说不定过一会儿答案会自己浮现的。
+![2016-07-29_10:36:39.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-07-29_10:36:39.jpg)
+目前来看，确实是说的很对。
+
+同时在`compose`函数最后的部分，返回了一个`yield *next;`
+
+通过翻阅 [《ECMAScript 6入门》-- ](http://es6.ruanyifeng.com/#docs/generator#yield-语句)可知。
+> 如果在Generater函数内部，调用另一个Generator函数，默认情况下是没有效果的。这个就需要用到yield*语句，用来在一个Generator函数里面执行另一个Generator函数。
+
+也就是说，其实每次执行时，是这样的：
+
+```javascript
+co(function* (next) {
+  if (!next) next = noop();
+
+  var i = middleware.length;
+
+  while (i--) {
+    next = middleware[i].call(this, next);
+  }
+
+  return yield *next;
+})
+```
+
+`return yield *next`, next作为第一个中间件，会被执行。
+如果碰到中间件中的next,则会被`co`继续调用和执行。
+因为在`co`中，碰到`generator`函数是这样的：
+
+```javascript
+if (isGeneratorFunction(obj) || isGenerator(obj)) return co.call(this, obj);
+```
+
+当然，如果在某个中间件中，碰到了以`yield`形式调用的函数,则会按co的规则，一路调用下去。
+当中间件调用时，会返回一个`Promise`，而`Promise`在co中，会通过`onFulfilled`函数，实现自动调用。
+从而就形成了独特的Koa风格。
+
+有点迷糊的话，举个具体的栗子：
+
+```javascript
+var koa = require('koa')
+var app = new koa()
+
+app.use(function * (next) {
+  console.log('middleware 1 start')
+  yield next
+  console.log('middleware 1 finished')
+})
+
+app.use(function * (next) {
+  console.log('middleware 2 finished')
+})
+
+app.listen(3000) 
+```
+当接收到响应时，首先输出middleware 1 start，然后碰到了 `yield next`， next是下一个中间件，会被`co`处理为`Promise`函数。
+而当第二个中间件执行完毕时，`Promise`自动调用`then`函数，而`then`却又是第一个中间件的`onFulfilled`函数。
+那么第一个中间件就会继续向下执行。直到执行完成。
+
+所以最后Koa的接收响应并处理的图，是这样的：
+![2016-07-29_11:28:35.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-07-29_11:28:35.jpg)
+
+### 中间件中的this
+到这一步，这些东西就好解释了。
+
+```javascript
+var ctx = self.createContext(req, res);
+onFinished(res, ctx.onerror);
+fn.call(ctx).then(function () {
+  respond.call(ctx);
+}).catch(ctx.onerror);
+```
+
+fn是处理过的中间件函数，使用`call`将创建好的`ctx`对象作为`this`传入，就可以实现在中间件中使用`this`来处理请求/响应。
+
+### 其他
+在整个处理过程中，心细的小伙伴还注意到了`onFinished`函数和`respond`函数。
+`onFinished`函数是一个Node的模块。[地址](https://github.com/jshttp/on-finished)。
+作用则是在请求结束或错误是自动调用。所以这儿把`ctx.onerror`这个错误处理函数传入，防止请求就直接是错的。
+而respond则是koa内部的函数，用于自动处理
