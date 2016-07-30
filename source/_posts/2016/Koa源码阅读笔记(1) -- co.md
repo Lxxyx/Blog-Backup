@@ -18,7 +18,6 @@ co的源代码十分简洁，一共才两百余行。而且里面注释到位，
 co的核心代码如下（已加上自己的注释）：
 
 ```javascript
-
 /**
  * Execute the generator function or a generator
  * and return a promise.
