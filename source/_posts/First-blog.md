@@ -36,7 +36,12 @@ tags: 随笔
 看到有人在文章评论，怎么没有RSS，于是给博客加上了RSS.
 > [hexo博客加入rss功能的教程](http://t.cn/R4N7jMe)
 
-## 博客迁移至Coding.net 2016.2.*（具体日期不记得了）
+## 博客迁移至Coding.net 2016.2.* （具体日期不记得了）
 GitCafe被Coding.net，故博客迁移至Coding.net。
 Coding.net的速度还是很快的。
+
 ## 购买iPic，专门用于写博客。2016.07.26
+
+## 博客程序搬迁至Coding.net
+虽然在北京这儿，但是连接Github的速度太慢了。
+所以决定把博客程序也搬迁至Coding.net
