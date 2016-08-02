@@ -21,4 +21,6 @@ function walkDir (dir, dirPath) {
 
 walkDir(dir, commonPath)
 
+console.log('---------------------')
 console.log(`博客总字数为：${totalLength}`)
+console.log('---------------------')
