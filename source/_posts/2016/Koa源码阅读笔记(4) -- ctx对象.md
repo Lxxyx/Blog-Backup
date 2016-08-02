@@ -2,7 +2,6 @@ title: Koa源码阅读笔记(4) -- ctx对象
 date: 2016-07-30 10:39:59
 tags: 前端
 ---
-> 正在书写中。
 
 ## 起因
 前两天终于把自己一直想读的Koa源代码读了一遍。
@@ -63,7 +62,6 @@ app.callback = function(){
 贴出相关的源代码：
 
 ```javascript
-
 var response = require('./response');
 var context = require('./context');
 var request = require('./request');
@@ -95,6 +93,40 @@ app.createContext = function(req, res){
   return context;
 };
 ```
+
 虽然看上去有点绕，但是仔细看看，还是不难的。
 之前说过，Koa的源码简洁，一共就4个文件。
 除了主要的`Application.js`, 剩下就都是与请求和响应相关的了。
+
+### 有趣的地方
+这儿，因为每次都要创建并调用`ctx`对象。为了避免影响原有的`context`,`request`,`response`对象。
+这儿采用了`Object.create()`来克隆对象。
+
+![2016-08-02_14:52:55.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-08-02_14:52:55.jpg)
+
+## context.js
+首先就来分析，最开始的context.js。
+context的实现很简单，但有意思的地方在于delegate这个地方。
+就如下图所示：
+![2016-08-02_14:45:30.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-08-02_14:45:30.jpg)
+
+我看了delegate这个源代码，功能是把`context`中相应的方法调用和属性读取，委托至某个对象中。
+而不用自己一个一个的写`apply`,`call`等。
+
+## request, response
+关于request和response，我这儿就不详细写了。
+在这儿放一张图足以。
+
+![2016-08-02_14:56:29.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-08-02_14:56:29.jpg)
+
+实际上，request和response是通过getter和setter，来实现存取不同属性的功能。
+另外，通过刚才说的delegate方法，则使用ctx对象时，便能自动通过getter和setter获取想要的内容。
+
+## 结语
+这一篇很简单，其实也没啥可以说的。
+因为Koa除了中间件部分看起来复杂，其它地方还是很简洁明了的。
+学习源代码的过程中，也发现了很多优雅的写法，算是开拓了自己的眼界。
+从会写到写好，看来还要挺长一段时间的。
+
+---
+前端路漫漫，且行且歌。
