@@ -6,7 +6,7 @@
     "version": "3.2.2"
   },
   "scripts": {
-    "start": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push",
+    "start": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
     "git": "git add -A && git commit -m 'auto backup' && git push"
   },
   "dependencies": {
