@@ -4,7 +4,7 @@
 const fs = require('fs')
 
 let totalLength = 0
-const commonPath = './source/_posts/'
+const commonPath = './source/task2/'
 
 let dir = fs.readdirSync(commonPath)
 
