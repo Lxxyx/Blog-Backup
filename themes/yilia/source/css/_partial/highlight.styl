@@ -23,11 +23,13 @@ $line-numbers
 
 .article-entry
   pre, code
-    font-family: font-mono
+    font-family: monaco
+    -webkit-font-smoothing: antialiased
   code
     background: color-background
     padding: 0 0.3em
     border: none
+    font-family: monaco
   pre
     @extend $code-block
     color: code-word
@@ -36,6 +38,7 @@ $line-numbers
       text-shadow: none
       padding: 0
       color: code-word
+      -webkit-font-smoothing: antialiased
   .highlight
     @extend $code-block
     border-radius: 4px

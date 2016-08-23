@@ -14,20 +14,14 @@ function walk (dirPath, cb) {
   })
 }
 
-const dateRe = /date:\s{1}\d{4}-\d{2}-\d{2}/
+const dateRe = /\d{4}-\d{2}-\d{2}-/
 const codeRe = /(```\w*)\n([^]+?)(```)/g
 
 walk('source/_posts/', filePath => {
-  let content = fs.readFileSync(filePath, 'utf-8')
-  if (!codeRe.exec(content)) {
-    console.log(filePath);
-  }
-  // let filename = path.basename(filePath)
-  // const date = dateRe.exec(content)[0].replace('date: ', '')
-  // const newfilename = `${date}-${filename}`
-  // const newfilePath = filePath.replace(filename, newfilename)
-  // content = `---\nlayout: post\n${content}`
-  // fs.unlinkSync(filePath)
-  // fs.writeFileSync(newfilePath, content, 'utf-8')
-  // console.log(filePath);
+  let filename = path.basename(filePath)
+  const content = fs.readFileSync(filePath, 'utf-8')
+  const newfilename = filename.replace(dateRe, '')
+  const newfilePath = filePath.replace(filename, newfilename)
+  fs.unlinkSync(filePath)
+  fs.writeFileSync(newfilePath, content, 'utf-8')
 })
