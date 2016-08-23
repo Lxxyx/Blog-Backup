@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Sass和Atom与CSS学习
 date: 2016-07-26 12:20:48
 tags: 前端

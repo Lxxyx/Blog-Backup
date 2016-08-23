@@ -1,5 +1,4 @@
 ---
-layout: post
 title: Koa源码阅读笔记(1) -- co
 date: 2016-07-27 09:32:42
 tags: 前端
