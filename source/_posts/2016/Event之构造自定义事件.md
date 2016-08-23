@@ -33,15 +33,35 @@ element.addEventListener('tap', handler, capture)
 然后重复得到“是在下输了”的结果。
 现在想想，只是因为当时自己找的资料不对，然后一直看别人的源代码，但是源代码里加了很多兼容处理的东西。于是添加`tap`事件的核心代码就这样被淹没在里面。
 
-## 解决疑惑
+## 意外之喜
 今天在MDN找资料时，意外的看到了Event，本来只是想看看自己还有啥没写，或者遗漏的。
 结果意外的发现了自定义事件的写法。有种本来只是瞎逛逛，却捡到了宝藏的感觉。
 
+## 自定义事件
+
+这儿借用MDN给的例子。来作为实例。
+
+```javascript
+var event = new Event('build')
+
+// Listen for the event.
+elem.addEventListener('build', function (e) { ... }, false)
+
+// Dispatch the event.
+elem.dispatchEvent(event)
+```
+
+这样看起来，确实简单。
+一个自定义事件，只要做三件事情即可。
+
+    构造事件 -> 监听事件 -> 触发事件
 
 ## 结语
-
+没啥好说了。具体的方法下面的参考资料里有。
+之所以写这篇文章，也只是纪念下烦恼自己半年有余的BUG罢了。
 
 参考资料：
 > [MDN - Event](https://developer.mozilla.org/zh-CN/docs/Web/API/Event/Event)
+> [MDN- 创建和触发 events](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Events/Creating_and_triggering_events)
 ---
 前端路漫漫，且行且歌
