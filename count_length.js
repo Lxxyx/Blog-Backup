@@ -23,6 +23,9 @@ function walkDir (dir, dirPath) {
 
 walkDir(dir, commonPath)
 
+console.log(`
+
+`)
 console.log('---------------------')
 console.log(`共写了：${totalNum}篇博客`)
 console.log(`博客总字数为：${totalLength}`)
