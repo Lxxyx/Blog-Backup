@@ -1,6 +1,6 @@
 ---
 title: Vue nextTick 源码解读
-tags: 前端 / 随笔
+tags: 前端
 date: 2016-09-25 22:21:16
 ---
 ## 起因
