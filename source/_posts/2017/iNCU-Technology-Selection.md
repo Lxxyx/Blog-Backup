@@ -1,5 +1,5 @@
 ---
-title: iNCU App开发实践 - 技术选型
+title: iNCU App开发实践 - 技术选型篇
 tags: 前端
 date: 2017-04-02 14:14:42
 ---
