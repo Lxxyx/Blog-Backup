@@ -46,3 +46,7 @@ Coding.net的速度还是很快的。
 ## 博客程序搬迁至Coding.net 2016.07.30
 虽然在北京这儿，但是连接Github的速度太慢了。
 所以决定把博客程序也搬迁至Coding.net
+
+## 加入Can i use 的脚本，方便直接查看兼容性
+
+生成的网址：https://caniuse.bitsofco.de/
