@@ -26,14 +26,14 @@ Node定义了一些经典的节点操作方法，我这儿画了个简单的图�
 写前端的同学，日常应该都会频繁的用到这些方法。
 
 ### 坑
-当然，也有可能会遇到踩坑的现象。比如说在使用`nextSibling`完成遍历操作的时候，`nextSibling`有可能会返回的是文本节点而非元素节点，那么在调用一些元素节点的属性或方法时（如 innerHTML），就会出错。这也是为什么一定要区分清楚两种节点的原因。
+当然，也有可能会遇到踩坑的现象。比如说在使用`nextSibling`完成遍历操作的时候，`nextSibling`有可能会返回的是文本节点而非元素节点，那么在调用一些元素节点的属性或方法时（如 `innerHTML`），就会出错。这也是为什么一定要区分清楚两种节点的原因。
 
 ## Element
-至于说Element, 大家肯定就熟悉多了。学前端入门的时候，就用过的 document.getElementBy* 的 Api，取出来的就是Element。
+至于说Element, 大家肯定就熟悉多了。学前端入门的时候，就用过的 `document.getElementBy*` 的 Api，取出来的就是Element。
 Element在MDN的解释如下：
 ![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-06-25-052131.jpg)
 
-这个其实大家日常的使用也非常多，就不多做就解释了。
+这个其实大家日常的使用也非常多，就不多做解释了。
 
 ## Node与Element的关系
 至于Node与Element的关系，从继承方面讲可能为清晰很多。
