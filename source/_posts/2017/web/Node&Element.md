@@ -10,7 +10,6 @@ date: 2017-06-25 12:19:18
 ![node和element](http://gw.alicdn.com/bao/uploaded/TB1_AJIMXXXXXXeXXXXXXXXXXXX-1202-352.png)
 
 2. 昨天有学弟问起我，能否自己定义一个所有元素节点通用的方法，就像数组可以用 Array.prototype.xxx 来添加一个所有数组的方法。
-
 于是发现自己对于Node和Element的概念其实还不太清晰，所以上MDN看了看，写篇博客沉淀一下。
 
 ## Node
@@ -69,5 +68,5 @@ p.sayHi()
 
 参考资料：
 
-- [Node](https://developer.mozilla.org/zh-CN/docs/Web/API/Node)
-- [Element](https://developer.mozilla.org/zh-CN/docs/Web/API/Element)
+- [MDN-Node](https://developer.mozilla.org/zh-CN/docs/Web/API/Node)
+- [MDN-Element](https://developer.mozilla.org/zh-CN/docs/Web/API/Element)
