@@ -80,3 +80,6 @@ Emmm……很简单的概念，但是自己之前一直没有想的很清楚。
 把这些问题想清楚了，剩下的工作就是跟着思路，完成数据与UI部分。
 以上就是自己的思路了，如果各位有什么建议的话，欢迎和我交流呀 😊 ~
 
+## 参考资料
+  - [有限状态机 - 维基百科](https://zh.wikipedia.org/wiki/%E6%9C%89%E9%99%90%E7%8A%B6%E6%80%81%E6%9C%BA)
+  - [JavaScript与有限状态机](http://www.ruanyifeng.com/blog/2013/09/finite-state_machine_for_javascript.html)
