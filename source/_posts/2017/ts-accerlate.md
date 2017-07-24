@@ -64,10 +64,6 @@ date: 2017-07-23 22:35:57
 
 因为都是微软家产品的原因，VSCode 对 TypeScript 的支持也相当完善。各种插件也层出不穷，基于 TypeScript 做的 `Automatic Type Acquisition` 功能使得 JavaScript 的用户也能享受到详细的代码提示功能，这一点上比 Sublime 等编辑器方便了很多。
 
-同时，两周前在 Rax 的开发者群中发布了一份问卷，在收上的有效问卷中，看到了 VSCode 的占有率，有点令人惊讶。（样本较小，会有误差存在）
-
-![](https://gw.alicdn.com/tfs/TB12314SpXXXXbuapXXXXXXXXXX-2024-798.png)
-
 关于 VSCode 编辑器的上手与配置，可以看阎王发表的这篇文章：[如何快速上手一款 IDE - VSC 配置指南和插件推荐](http://www.barretlee.com/blog/2017/04/21/something-about-vsc/)
 
 ## 解放自己，专注业务核心开发：TypeScript 编辑器插件推荐
@@ -150,3 +146,9 @@ Emmm……如果一定要说作用的话，就是更好看一些吧……很符�
 用 TypeScript 和相关插件所解决的问题，都是一些繁琐、无趣、零成长的工作，而且还影响心情。
 有这个时间，为什么不多陪陪女朋友，多学点东西，多解决一些有意思的问题呢？
 所以这种可以让计算机解决的问题，就让计算机去解决吧~
+
+## 参考资料
+
+- [如何评价 TypeScript？ - 王泽的回答](https://www.zhihu.com/question/21879449)
+- [flow.js/typescript 这类定义参数类型的意义何在？ - vilicvane的回答](https://www.zhihu.com/question/28016252/answer/39056940)
+
