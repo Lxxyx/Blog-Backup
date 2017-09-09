@@ -16,7 +16,7 @@ tags: 前端
 接下来就是介绍两种常见的链表: 单向链表，双向链表在JavaScript中的实现。
 ## 单向链表
 链表中最简单的形式就是单向链表，链表中的节点都包含两个部分，第一部分储存着自身信息，第二部分则储存有指向下一节点的指针。最后一个节点则指向`NULL`，如图所示:
-![单向链表图示2](http://7xoxxe.com1.z0.glb.clouddn.com/link1.png)
+![单向链表图示2](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050051.png)
 ### JavaScipt中单向链表的实现
 首先，创建一个构造函数。
 
@@ -247,7 +247,7 @@ this.size = function() {
 
 ## 双向链表
 双向链表与单向链表很是相像。在单向链表中，只有指向下一个节点的链接。但在双向链表中，<strong>还有指向上一个节点的链接，是双向的。</strong>
-如图所示: ![双向链表图示](http://7xoxxe.com1.z0.glb.clouddn.com/dlink.png)
+如图所示: ![双向链表图示](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050053.png)
 ### JavaScipt中双向链表的实现
 首先，依然是构造函数:
 ```javascript

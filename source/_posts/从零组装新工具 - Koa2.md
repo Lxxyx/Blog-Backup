@@ -54,7 +54,7 @@ async function main() {
 ### 理解Koa的中间件
 在一开始学习Koa时，是不太理解Koa的中间件级联这个概念的。
 就是下图这玩意。
-![中间件级联](http://7xoxxe.com1.z0.glb.clouddn.com/koa.jpg)
+![中间件级联](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050024.jpg)
 
 这个算是Koa的核心概念了，不理解这个，只能安安心心继续用Express。
 

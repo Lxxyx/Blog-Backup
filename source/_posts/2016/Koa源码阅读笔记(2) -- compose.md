@@ -10,7 +10,7 @@ tags: 前端
 > [Koa源码阅读笔记(3) -- 服务器の启动与请求处理](http://t.cn/RtJhLfa)
 > [Koa源码阅读笔记(4) -- ctx对象](http://t.cn/RtJx5sX)
 
-![2016-07-27_19:11:39.jpg](http://7xoxxe.com1.z0.glb.clouddn.com/2016-07-27_19:11:39.jpg)
+![2016-07-27_19:11:39.jpg](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045652.jpg)
 ## 起因
 自从写了个Koa的脚手架[koa2-easy](https://github.com/Lxxyx/koa2-easy)，愈发觉得Koa的精妙。
 于是抱着知其然也要知其所以然的想法，开始阅读Koa的源代码。

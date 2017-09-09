@@ -28,16 +28,16 @@ date: 2017-07-23 22:35:57
 
 去年十月，在因为实际学习需要，接触越来越多前端框架时候，感觉整天的开发，大半的时间都浪费在了查文档上，特别是一些 React 的组件，props又多又长……每次写的时候，都得回去翻文档，简直绝望。
 
-![](https://gw.alicdn.com/tfs/TB1HHW4SpXXXXbJapXXXXXXXXXX-1878-958.png)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045901.png)
 
-![](https://gw.alicdn.com/tfs/TB1nPYpSpXXXXcSXFXXXXXXXXXX-269-220.png)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45902.png)
 
 在这种每天近乎绝望的重复劳动下，我开始尝试去找解决方法，再到后来有一天接触了 TypeScript ，感觉到这就是自己想要的功能。
 嗯……看中的不是 TypeScript 的稳定性，而是 TypeScript 的代码提示。
 
 比如写 Node.js，使用 TypeScript 与 不使用的区别是这样的：
 
-![](https://gw.alicdn.com/tfs/TB11WrkSpXXXXX_XVXXXXXXXXXX-772-604.png)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045902.png)
 
 不仅不用手动翻阅 Api, 而且参数是什么也都一清二楚了。
 
@@ -79,7 +79,7 @@ date: 2017-07-23 22:35:57
 
 这个是我最喜欢的插件，具体的作用，一图胜千言：
 
-![](http://g.recordit.co/QHByAo9Km7.gif)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045917.gif)
 
 在长长的路径里，导入另一个文件夹深处的模块，那种感觉是绝望……
 每次都要重复的import，每次都要重复的判断路径，每次都要重新写一遍import……
@@ -123,7 +123,7 @@ npm install --save @types/lodash
 
 同样，话不多说，一图胜千言：
 
-![](https://github.com/MLoughry/sort-typescript-imports/raw/master/images/example.gif)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045921.gif)
 
 这是一个看起来没什么作用的插件……因为其实 import顺序是否整洁有序好像对开发效率啥的并没有很大的提升。
 但这是一个你接受了它的设定，就可能会觉得十分有趣的插件……

@@ -16,7 +16,7 @@ tags: 前端
 
 ### 集合的操作
 集合的基本操作有交集、并集、差集等。这儿我们介绍JavaScipt集合中交集、并集、差集的实现。至于这三个的具体概念，可以看图:
-![交集、并集、差集](http://7xoxxe.com1.z0.glb.clouddn.com/set.png)
+![交集、并集、差集](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050055.png)
 ### JavaScipt中集合的实现
 首先，创建一个构造函数。
 ```javascript
