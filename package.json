@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "3.2.2"
+    "version": "3.3.9"
   },
   "scripts": {
     "start": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
