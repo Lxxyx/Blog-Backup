@@ -16,11 +16,11 @@ Native端：Native init 与 JS init
 JS端：Fetch Data, JS Render
 Native: Native Render
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045820.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045820.jpg)
 
 ## 启动流程
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45821.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45821.jpg)
 
 问题：
 
@@ -30,76 +30,76 @@ Native: Native Render
 
 ### 预加载
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045823.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045823.jpg)
 
 具体实现：
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045826.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045826.jpg)
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045829.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045829.jpg)
 
 ### 增量更新
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045838.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045838.jpg)
 
 ### 分包
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045840.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045840.jpg)
 
 具体架构：
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045841.jpg) 
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045841.jpg) 
 
 ## JS端优化
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045842.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045842.jpg)
 
 ### 加载速度快
 
 本地缓存
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045844.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045844.jpg)
 
 缓存同时也能实现数据复用
 
 非首屏异步加载
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045845.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045845.jpg)
 
 通过 Hack 的方式，使得原有需要5个节点的轮播图，改为只创建3个节点。
 通过3个节点，模拟出轮播图的效果
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045846.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045846.jpg)
 
 ### 滚动优化
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045847.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045847.jpg)
 
 ListView配置
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045849.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045849.jpg)
 
 ### 体验优化
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045851.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045851.jpg)
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045852.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045852.jpg)
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045854.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045854.jpg)
 
 目的是为了，点击时按钮先出现点击效果，然后在下一帧执行一些耗时的操作。
 视觉优先
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045855.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045855.jpg)
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045856.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045856.jpg)
 
 性能与可控性强
 
 ### 组件划分
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045858.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045858.jpg)
 
 ### 其他优化
 
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45859.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45859.jpg)
