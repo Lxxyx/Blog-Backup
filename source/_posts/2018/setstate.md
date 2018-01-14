@@ -43,14 +43,14 @@ setState的流程，在知乎专栏的一篇文章里已经讲的很清晰了，
  
  调用 setState 时，函数内部是：
  
- ![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103148.png)
+ ![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103148.png)
  
  可以看到调用了 `this.updater.enqueueSetState`，把自己和要更新的 state 传了进去。
  （另外不得不感慨一句，React这种顶级开源项目，注释完善，各种错误提示完善，不论是使用还是读源代码，都太幸福了）
  
 调用 `enqueueSetState` 后，内部逻辑如下：
 
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103409.png)
+![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103409.png)
  
 这儿有个很有趣的点就是，React把组件划分为两种实例，一种是对外的，可以查看的，一种是挂载部分私有属性与任务的，就是图里面的 `internalInstance`，这么做的好处是可以把部分细节屏蔽，不对外暴露从而避免被修改等。
 
@@ -73,7 +73,7 @@ setState的流程，在知乎专栏的一篇文章里已经讲的很清晰了，
 之前就听说过，react在多次 setState 时，会优化到只更新一次，这次看到了队列，便推测于此有关。
 随后搜索源代码，看到了这么一段：
 
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-110536.png)
+![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-110536.png)
 
 在代码中不难看出，nextState时由队列中各种状态合并成的一个最终对象。
 
@@ -81,7 +81,7 @@ setState的流程，在知乎专栏的一篇文章里已经讲的很清晰了，
 
 enqueueUpdate 函数很短，核心部分便是判断是否正处于 `isBatchingUpdates`的状态下，来决定是直接开始升级，还是推入 dirtyComponents 等待处理。
 在注释的开头部分也说的很清楚，标记一个组件是否需要升级。
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103845.png)
+![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103845.png)
 
 ## batchingStrategy
 
@@ -111,7 +111,7 @@ var batchingStrategy = {
 
 比如说在触发 React 的事件时，就调用了 batchedUpdates
 
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-112027.png)
+![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-112027.png)
 
 在这儿，我们的理解是：由 React 触发的事件，会使用 batchedUpdates 方法。
 此时 setState 是异步的。
