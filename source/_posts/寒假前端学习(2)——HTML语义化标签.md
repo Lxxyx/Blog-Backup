@@ -55,7 +55,7 @@ ul和ol虽然都是列表项，但是具体使用时，差别还是很大的。
 </dl>
 ```
 效果图: 
-> ![dldtdd效果图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-50047.png)
+> ![dldtdd效果图](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-50047.png)
 
 ### C. b/strong , i/em(强调标签)
 说明: 在HTML中，b和strong都是加粗，i和em都是斜体。但是从HTML4到HTML5中，又发生了转变。所以有必要写下来。

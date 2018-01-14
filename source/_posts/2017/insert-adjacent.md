@@ -8,7 +8,7 @@ date: 2017-09-25 00:33:41
 
 看朋友圈时候，有看到一个自己从来没有发现过的Api。
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-24-163611.jpg)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-24-163611.jpg)
 
 名字是 insertAdjacentHTML。
 

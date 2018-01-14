@@ -15,6 +15,6 @@ date: 2017-09-01 09:47:57
 
 下面是一个资源的生命周期
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050017.jpg)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050017.jpg)
 
 参考资料：[了解 Resource Timing](https://developers.google.cn/web/tools/chrome-devtools/network-performance/understanding-resource-timing?hl=zh-cn)

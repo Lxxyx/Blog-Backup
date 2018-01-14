@@ -13,7 +13,7 @@ date: 2017-05-14 11:58:18
 
 想法源于flask，之前看flask写的路由，觉得用装饰器写的话，会比较优美，然后就写了这个插件。
 效果如下：
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045923.jpg)
+![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045923.jpg)
 
 ## react-native-dynamic-sty2lesheet
 
