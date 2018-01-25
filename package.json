@@ -6,7 +6,8 @@
     "version": "3.3.9"
   },
   "scripts": {
-    "start": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
+    "start":
+      "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
     "git": "git add -A && git commit -m 'auto backup' && git push"
   },
   "dependencies": {
@@ -24,5 +25,8 @@
     "hexo-renderer-marked": "^0.2.4",
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.2"
+  },
+  "devDependencies": {
+    "@types/node": "^9.3.0"
   }
 }
