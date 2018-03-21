@@ -53,7 +53,7 @@ View = ViewModel(Model)
 
 有限状态机在维基百科上的描述如下：
 > 有限状态机（英语：finite-state machine，缩写：FSM）又称有限状态自动机，简称状态机，是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045926.png)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045926.png)
 
 有限状态机并不是一个复杂的概念
 > 简单说，它有三个特征：

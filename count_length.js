@@ -1,6 +1,7 @@
 /**
  * 计算所写博客字数。Node直接运行即可。
  */
+
 const fs = require('fs')
 
 let totalLength = 0
@@ -9,7 +10,7 @@ const commonPath = './source/_posts/'
 
 let dir = fs.readdirSync(commonPath)
 
-function walkDir (dir, dirPath) {
+function walkDir(dir, dirPath) {
   dir.forEach(val => {
     const stat = fs.statSync(`${dirPath}${val}`)
     if (stat.isDirectory()) {

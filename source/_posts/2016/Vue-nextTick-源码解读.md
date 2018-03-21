@@ -7,7 +7,7 @@ date: 2016-09-25 22:21:16
 自己第一次用Vue做项目时，经常遇到操作DOM的问题，但是很多时候因为Vue数据更新的特性，是不能在第一时间拿到更新后的DOM。
 后面才观察到，Vue有一个`nextTick`方法。
 nextTick的Api如下：
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045713.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045713.jpg)
 对于这句话：
 
 > 将回调延迟到下次 DOM 更新循环之后执行。在修改数据之后立即使用它，然后等待 DOM 更新。
@@ -140,7 +140,7 @@ timerFunc = function () {
 ```
 
 在调用`observe`时，传入的参数有：
-![](//7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045714.jpg)
+![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045714.jpg)
 **因为Mutation Observer则是异步触发，DOM发生变动以后，并不会马上触发，而是要等到当前所有DOM操作都结束后才触发。**
 调用timerFunc时，因为DOM操作已经结束，此刻触发注册的回调，就能获取到更新后的回调。
 
