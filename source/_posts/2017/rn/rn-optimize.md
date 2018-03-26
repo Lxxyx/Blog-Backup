@@ -9,7 +9,7 @@ date: 2017-09-09 12:40:18
 自己使用 RN 已经很长时间了，但是对于 RN 的了解却不够深入，接下来一段时间会多关注性能优化相关的知识
 
 课程：https://www.youtube.com/watch?v=NdUg_hjI30w
-
+<!-- more -->
 ### 加载方式
 
 Native端：Native init 与 JS init

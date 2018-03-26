@@ -7,7 +7,8 @@ tags: 前端
 ## 场景重现
 项目是一个SPA，使用了Vue+Vue-Router+Webpack+jQuery。
 报错的场景如下：
-![报错](http://7xk109.com1.z0.glb.clouddn.com/blog-QQ截图20151210172045.jpg)
+![error](http://7xk109.com1.z0.glb.clouddn.com/blog-QQ截图20151210172045.jpg)
+<!-- more -->
 ## 为何称之为莫名其妙？
 项目虽然作为一个SPA，也引用了jQuery。
 但是！！！我所有的JS文件全部用Webpack打包了呀！

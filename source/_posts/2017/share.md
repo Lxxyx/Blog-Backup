@@ -12,7 +12,7 @@ date: 2017-05-06 20:49:13
 第一份：[REM + Flex 布局 ](http://yanshuo.io/assets/player/?deck=57ce610a2e958a00543a420e)
 
 讲的是我在写移动端页面，和学习Flex布局中的一些经验和好的资源。
-
+<!-- more -->
 ## 家园项目Git规范
 
 第二份：[家园项目Git规范](http://yanshuo.io/assets/player/?deck=58f7703ba22b9d006c15edee)

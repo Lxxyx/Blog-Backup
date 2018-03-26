@@ -7,6 +7,7 @@ tags: 前端
 ## 学习起因：
 在之前的JavaScript学习中，this,call,apply总是让我感到迷惑，但是他们的运用又非常的广泛。遂专门花了一天，来弄懂JavaScript的this,call,apply。
 中途参考的书籍也很多，以《JavaScript设计模式与开发实践》为主，《JavaScript高级程序设计》、《你不知道的JavaScript》为辅。这三本书对我理解this,call,apply都起了很大的帮助。
+<!-- more -->
 ## this
 首先，我们先讲述this。
 

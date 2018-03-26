@@ -12,6 +12,7 @@ tags: 随笔
 ``` There still some problems with Debian. ``` 
 翻译成中文就是：“Debian用户还是洗洗睡吧。”
 再加上Deepin15桌面经常会冒出别的文件夹的新文件，于是心灰意冷的我，开始继续使用Windows做开发。 
+<!-- more -->
 ## 向Ubuntu转移
 本来Windows用的也还可以，但是由于自身CPU性能跟不太上(i5-4200u)，用webpack编译个文件要花上40多秒，运行过程中也各种降频，简直不能忍。于是决定上Liunx，同时又因为有Deepin的前车之鉴，所以决定上Ubuntu Kylin。 
 嗯，不是Ubuntu，是中国的麒麟版。原因很简单：壁纸好看+内置Chrome和搜狗输入法。 于是在折腾中，开始了Ubuntu Kylin的安装。

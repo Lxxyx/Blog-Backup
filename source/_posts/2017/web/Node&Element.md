@@ -11,7 +11,7 @@ date: 2017-06-25 12:19:18
 
 2. 昨天有学弟问起我，能否自己定义一个所有元素节点通用的方法，就像数组可以用 Array.prototype.xxx 来添加一个所有数组的方法。
 于是发现自己对于Node和Element的概念其实还不太清晰，所以上MDN看了看，写篇博客沉淀一下。
-
+<!-- more -->
 ## Node
 Node类继承于EventTarget，下面是MDN给的解释。
 ![](https://cdn.lxxyx.cn/2018-03-26-085711.jpg)

@@ -14,7 +14,7 @@ nextTick的Api如下：
 
 自己感到十分好奇，因为之前我解决此类问题，使用的是`setTimeout(fn, 0)`的方式来的。
 所以就继续打开Vue的源代码，细细研读。
-
+<!-- more -->
 ## 异步更新队列
 在Vue的文档中，[异步更新队列](http://cn.vuejs.org/guide/reactivity.html#u5F02_u6B65_u66F4_u65B0_u961F_u5217)部分有这么一段：
 

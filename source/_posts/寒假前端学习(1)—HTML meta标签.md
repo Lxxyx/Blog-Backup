@@ -18,6 +18,7 @@ tags: 前端
 > The <meta> tag provides metadata about the HTML document. Metadata will not be displayed on the page, but will be machine parsable.
 
 不难看出，其中的关键是metadata，中文名叫元数据，是用于描述数据的数据。它不会显示在页面上，但是机器却可以识别。这么一来meta标签的作用方式就很好理解了。
+<!-- more -->
 ### 用处
 > Meta elements are typically used to specify page description, keywords, author of the document, last modified, and other metadata.
 The metadata can be used by browsers (how to display content or reload page), search engines (keywords), or other web services

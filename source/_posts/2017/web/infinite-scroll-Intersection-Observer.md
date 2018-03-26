@@ -10,7 +10,7 @@ date: 2017-09-15 20:52:32
 
 然而 `getBoundingClientRect` 的方法，用起来其实挺别扭的，因为每次滚动都要调用与检测，且必须自己书写检测函数，并不是很方便。
 所幸的是，浏览器给我们添加了新的 Api，`Intersection Observer`。
-
+<!-- more -->
 ## Intersection Observer
 
 参照 MDN 上的解释，这个 API 的作用是：

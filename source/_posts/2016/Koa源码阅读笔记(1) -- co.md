@@ -15,6 +15,7 @@ tags: 前端
 由于演讲只有一个小时，讲不完Koa的原理。于是在听的时候觉得并不是很满足，遂开始自己翻看源代码。
 而Koa1是基于ES6的`generator`的。其在Koa1中的运行依赖于co。
 正好自己之前也想看co的源代码，所以趁着这个机会，一口气将其读完。
+<!-- more -->
 ## co
 关于co,其作者的介绍很是简单。
 > The ultimate generator based flow-control goodness for nodejs (supports thunks, promises, etc)

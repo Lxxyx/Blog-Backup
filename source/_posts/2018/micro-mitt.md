@@ -10,7 +10,7 @@ date: 2018-01-26 00:55:08
 这两天读到了一些非常有意思的小库，虽然小但是功能完备，比如说这次我们要讲解的 Mitt.
 
 [Github地址](https://github.com/developit/mitt)
-
+<!-- more -->
 ## 小
 
 `Mitt`是一个微型的 `EventEmitter` 库，实现了基本的 `on`, `off`, `emit`  三个Api，对于使用 EventEmitter 其他功能不多的同学来说，200byte 的体积可以说是非常划算了。
