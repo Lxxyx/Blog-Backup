@@ -80,7 +80,7 @@ console.log('toString' in noPrototypeObj);
 
 输出结果如下：
 
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-25-171207.png)
+![](https://cdn.lxxyx.cn/2018-03-26-085721.png)
 
 ### 简洁的队列初始化
 
@@ -125,7 +125,7 @@ export default function mitt(all: EventHandlerMap) {
 但是总的代码量比起之前的代码小了很多，实现了简化代码的目的。
 
 PS：这个操作我之前在读 React setState 源代码时，也碰到过。
-![](https://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-13-103409.png)
+![](https://cdn.lxxyx.cn/2018-03-26-085724.png)
 
 
 其中 queue 的获取便是使用了这种方式。
@@ -155,7 +155,7 @@ off(type: string, handler: EventHandler) {
 
 而无符号右移（>>>），恰恰符合我们的需要。
 
-![](http://ipic-666.oss-cn-hangzhou.aliyuncs.com/2018-01-25-172301.png)
+![](https://cdn.lxxyx.cn/2018-03-26-085726.png)
 
 具体的作用如 demo，在搜索的事件监听函数不存在时，会返回一个极大的正数，传入 splice 后，并不会删除已有的函数监听器，从而实现了想要的功能。
 

@@ -44,15 +44,15 @@ date: 2017-08-31 09:07:22
 说到加载顺序，这儿还踩了一个坑。
 就是在做实验的时候，加载了两个JS，但是第二个 JS 的文件的加载时间后面。
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045930.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085704.jpg)
 
 一开始也是有点百思不得其解，后面看了看 Network 面板，资源的加载时间。
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045932.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085705.jpg)
 
 发现这个资源大部分时间花在了 Queueing 上，于是翻 Chrome dev tools 的文档，得到如下解释：
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045934.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085706.jpg)
 
 然后发现自己碰见了经典的浏览器连接数限制问题。
 
@@ -126,7 +126,7 @@ JS 脚本加载时，可以选择 defer 与 async 属性。
 
 同时关于具体的表现，这儿有张图：
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045944.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085708.jpg)
 
 ## 参考资料：
 

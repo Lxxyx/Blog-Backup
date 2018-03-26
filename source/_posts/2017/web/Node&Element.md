@@ -7,22 +7,22 @@ date: 2017-06-25 12:19:18
 ## 起因
 起因有二：
 1. 在看winter老师的分享：[《一个前端的自我修养》](http://taobaofed.org/blog/2016/03/23/the-growth-of-front-end/)时，有注意到这么一幅图，里面有写`childNode`和`children`属性。
-![node和element](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045945.png)
+![node和element](https://cdn.lxxyx.cn/2018-03-26-085708.png)
 
 2. 昨天有学弟问起我，能否自己定义一个所有元素节点通用的方法，就像数组可以用 Array.prototype.xxx 来添加一个所有数组的方法。
 于是发现自己对于Node和Element的概念其实还不太清晰，所以上MDN看了看，写篇博客沉淀一下。
 
 ## Node
 Node类继承于EventTarget，下面是MDN给的解释。
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045947.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085711.jpg)
 
 Node在这儿指DOM节点，其中包括了我们最常见的元素节点，比如 div/p/span 之类的。除此之外还包括了 Document/Comment 之类的节点。
 一个节点的类型，可以通过其`nodeType`类型查看到，具体的类型则可以看下图：
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045958.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085712.jpg)
 
 ### 高频的属性与方法
 Node定义了一些经典的节点操作方法，我这儿画了个简单的图，**并没有列出全部属性**。
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050009.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085714.jpg)
 写前端的同学，日常应该都会频繁的用到这些方法。
 
 ### 坑
@@ -31,7 +31,7 @@ Node定义了一些经典的节点操作方法，我这儿画了个简单的图�
 ## Element
 至于说Element, 大家肯定就熟悉多了。学前端入门的时候，就用过的 `document.getElementBy*` 的 Api，取出来的就是Element。
 Element在MDN的解释如下：
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050011.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085717.jpg)
 
 这个其实大家日常的使用也非常多，就不多做解释了。
 

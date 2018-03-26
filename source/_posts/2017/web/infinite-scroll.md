@@ -49,7 +49,7 @@ date: 2017-04-27 13:40:50
 getBoundingClientRect()方法的返回值是一个 DOMRect 对象，这个对象是由该元素的 getClientRects() 方法返回的一组矩形的集合, 即：是与该元素相关的CSS 边框集合 。
 
 对象的属性如下图所示：
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045928.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085702.jpg)
 
 其中的 `top, left, bottom, right` 均是元素自身相对于视图左上角而言的。
 就`top, left`属性而言，很好理解。而`bottom, right`则一开始搞的有点懵，后面通过devtools观察，发现`bottom`是元素的最底部相对于视图窗口左上角而言的，而`right`则是元素的最右侧相对于视图窗口左上角而言的。

@@ -16,11 +16,11 @@ Native端：Native init 与 JS init
 JS端：Fetch Data, JS Render
 Native: Native Render
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045820.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085559.jpg)
 
 ## 启动流程
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45821.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085601.jpg)
 
 问题：
 
@@ -30,76 +30,76 @@ Native: Native Render
 
 ### 预加载
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045823.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085603.jpg)
 
 具体实现：
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045826.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085605.jpg)
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045829.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085606.jpg)
 
 ### 增量更新
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045838.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085608.jpg)
 
 ### 分包
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045840.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085611.jpg)
 
 具体架构：
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045841.jpg) 
+![](https://cdn.lxxyx.cn/2018-03-26-085612.jpg) 
 
 ## JS端优化
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045842.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085614.jpg)
 
 ### 加载速度快
 
 本地缓存
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045844.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085616.jpg)
 
 缓存同时也能实现数据复用
 
 非首屏异步加载
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045845.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085617.jpg)
 
 通过 Hack 的方式，使得原有需要5个节点的轮播图，改为只创建3个节点。
 通过3个节点，模拟出轮播图的效果
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045846.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085618.jpg)
 
 ### 滚动优化
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045847.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085621.jpg)
 
 ListView配置
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045849.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085631.jpg)
 
 ### 体验优化
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045851.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085632.jpg)
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045852.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085635.jpg)
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045854.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085636.jpg)
 
 目的是为了，点击时按钮先出现点击效果，然后在下一帧执行一些耗时的操作。
 视觉优先
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045855.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085638.jpg)
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045856.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085640.jpg)
 
 性能与可控性强
 
 ### 组件划分
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-045858.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085641.jpg)
 
 ### 其他优化
 
-![](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-45859.jpg)
+![](https://cdn.lxxyx.cn/2018-03-26-085643.jpg)

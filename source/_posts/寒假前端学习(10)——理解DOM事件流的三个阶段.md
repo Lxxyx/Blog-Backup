@@ -58,7 +58,7 @@ window.onclick = function() {
 };
 ```
 效果如图所示：
-![事件冒泡示例图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050035.png)
+![事件冒泡示例图](https://cdn.lxxyx.cn/2018-03-26-085748.png)
 
 在代码所示的页面中，如果点击了button，那么这个点击事件会按如下的顺序传播（Chrome浏览器）：
 
@@ -76,7 +76,7 @@ window.onclick = function() {
 3. body
 4. button
 
-![事件捕获示例图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050041.png)
+![事件捕获示例图](https://cdn.lxxyx.cn/2018-03-26-085750.png)
 当然，由于时代更迭，事件冒泡方式更胜一筹。所以放心的使用事件冒泡，有特殊需要再使用事件捕获即可。
 ## DOM事件流
 DOM事件流包括三个阶段。
@@ -86,7 +86,7 @@ DOM事件流包括三个阶段。
 3. 事件冒泡阶段
 
 如图所示（图片源于网络，若侵权请告知）：
-![DOM事件流示例图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050043.png)
+![DOM事件流示例图](https://cdn.lxxyx.cn/2018-03-26-085751.png)
 
 ### 1. 事件捕获阶段
 也就是说，当事件发生时，首先发生的是事件捕获，为父元素截获事件提供了机会。
@@ -99,7 +99,7 @@ window.addEventListener('click', function() {
 ```
 
 此时，点击button的效果是这样的。
-![DOM事件流中事件捕获示例图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050044.png)
+![DOM事件流中事件捕获示例图](https://cdn.lxxyx.cn/2018-03-26-085752.png)
 
 可以看到，点击事件先被父元素截获了，且该函数只在事件捕获阶段起作用。
 
@@ -122,7 +122,7 @@ button.addEventListener('click', function(event) {
 }, false);
 ```
 点击后，效果如下图：
-![阻止冒泡示例图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050046.png)
+![阻止冒泡示例图](https://cdn.lxxyx.cn/2018-03-26-085753.png)
 
 不难看出，事件在到达具体元素后，停止了冒泡。但不影响父元素的事件捕获。
 

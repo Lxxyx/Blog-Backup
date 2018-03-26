@@ -14,7 +14,7 @@ tags: 前端
 </textarea>
 ```
 实际样子
-> ![公告框](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050019.jpg)
+> ![公告框](https://cdn.lxxyx.cn/2018-03-26-085742.jpg)
 
 然后需要在点击发布时，把输入的内容通过ajax传送给后台。
 之前习惯了jQuery，直接使用val()函数。

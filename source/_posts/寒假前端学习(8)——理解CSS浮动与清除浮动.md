@@ -15,7 +15,7 @@ CSS的浮动，算是我在写网页时用的最多的属性之一。但要说�
 恰巧在慕课网，张鑫旭老师开了《CSS深入理解之float浮动》这门课。链接在文末，有兴趣的可以听听，老师讲课风格很风趣……
 ## Float的历史
 Float设计的初衷，是为了实现文字环绕效果。就像下图展示的一样（图片源于w3school）：
-![Float效果图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050101.png)
+![Float效果图](https://cdn.lxxyx.cn/2018-03-26-085808.png)
 嗯，就这么简单。
 ## Float引起的父元素高度塌陷BUG？
 在这儿，我们用一个例子来说明子元素设置浮动，从而引起父元素高度塌陷的问题。
@@ -34,9 +34,9 @@ CSS设置如下：
 }
 ```
 最后效果是这样的:
-![未Float的效果图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050102.png)
+![未Float的效果图](https://cdn.lxxyx.cn/2018-03-26-085810.png)
 通过chrome控制台，可以看到此时div的高度为464px。
-![div高度](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-50103.png)
+![div高度](https://cdn.lxxyx.cn/2018-03-26-085811.png)
 
 接下来，我们给那张图片添加浮动效果。
 ```css
@@ -45,9 +45,9 @@ CSS设置如下：
 }
 ```
 再看网页，发现父元素已经塌陷了,之前的边框也消失不见了，成为一条线了。
-![Float后的效果图](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050105.png)
+![Float后的效果图](https://cdn.lxxyx.cn/2018-03-26-085814.png)
 此时再去控制台查看div的高度，高度为0px。
-![div高度](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050106.png)
+![div高度](https://cdn.lxxyx.cn/2018-03-26-085816.png)
 ### 不，不是BUG
 很多人把这个现象称为浮动带来的BUG。但从一开始Float的用途来思考：
 ```
@@ -62,7 +62,7 @@ CSS设置如下：
 ```
 至于文档流是啥，我这儿就不介绍了。但浮动的元素脱离了文档流，所以是不计算高度的。
 在此，我们加入一段话，看看div的高度。
-![段落高度](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050107.png)
+![段落高度](https://cdn.lxxyx.cn/2018-03-26-085817.png)
 从图中可以看出，div因为段落的加入，高度被撑开了。
 
 所以子元素浮动引起父元素高度塌陷的原因如下：
@@ -79,7 +79,7 @@ clear:both的作用，对各位来说可以算是耳熟能详了。至于clear�
 <div style="clear: both;"></div>
 ```
 在父元素内的底部，加入这一行代码。看图易知，父元素因为子元素设置浮动而高度塌陷的问题，已经被解决了。
-![加入clear: both后的效果](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050108.png)
+![加入clear: both后的效果](https://cdn.lxxyx.cn/2018-03-26-085820.png)
 
 然后如果只是会用`clear:both`，又怎么能满足我的求知欲呢？相比与这行代码产生的作用，我更关心为什么这行代码能清除浮动。
 对此，我继续翻阅文档。
@@ -119,17 +119,17 @@ CSS部分如下：
 }
 ```
 效果图长这样：
-![demo效果](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050109.png)
+![demo效果](https://cdn.lxxyx.cn/2018-03-26-085824.png)
 
 从图上可以看到，元素B的一部分是在元素A空出的空间内的。并且I'm divB这句话在元素A的右侧。且父元素高度塌陷，父元素现在的高度就是元素B的高度。
 那么如果元素A右侧空出的空间内，放不下元素B呢？
 我们把元素B宽度调整为200px。
 
-![放不下时的效果](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050110.png)
+![放不下时的效果](https://cdn.lxxyx.cn/2018-03-26-085825.png)
 可以看出，元素B就自成一行了。
 
 给元素B加入`clear:both`后，元素B将忽略左边浮动所产生的空间，不去补空缺。
-![元素B设置clear:both后](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050113.png)
+![元素B设置clear:both后](https://cdn.lxxyx.cn/2018-03-26-085832.png)
 如图所示，元素B会另起一行。而不是缩到浮动产生的空间内。
 
 ### 撑开父元素空间的奥秘

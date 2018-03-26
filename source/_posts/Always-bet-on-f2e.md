@@ -36,7 +36,7 @@ tags: 随笔
 
 ## Always bet on F2E
 曾经看过一个slides，最后有这么一些话：
-![Always bet on js](http://7xoxxe.com1.z0.glb.clouddn.com/2017-09-09-050018.png)
+![Always bet on js](https://cdn.lxxyx.cn/2018-03-26-085741.png)
 这些话是Brendan Eich，也就是JavaScript之父说的。
 
 这也是我想说的话：Always bet on F2E.
