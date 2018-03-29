@@ -50,3 +50,15 @@ Coding.net的速度还是很快的。
 ## 加入Can i use 的脚本，方便直接查看兼容性
 
 生成的网址：https://caniuse.bitsofco.de/
+
+## 全站HTTPS 2018.03.26
+
+全站HTTPS化，七牛云空间HTTPS化
+
+## 博客加入查看更多 2018.03.27
+避免一次性加载过多内容
+
+## 更换主域名 2018.03.29
+更换主域名为 blog.lxxyx.cn
+因为 blog.lxxyx.cn 更符合个人站的特点
+
