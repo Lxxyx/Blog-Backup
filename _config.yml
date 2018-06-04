@@ -16,11 +16,17 @@ root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 
+# Site settings
+SEOTitle: Lxxyx的前端乐园
+header-img: https://cdn.lxxyx.cn/2018-06-03-131201.jpg
+email: Lxxyxzj@gmail.com
+keyword: "Lxxyx,前端,前端博客,咩咩丸,王怡凡的男朋友"
+
 # Directory
 source_dir: source
 public_dir: public
 tag_dir: tags
-archive_dir: archives
+archive_dir: i_dont_wanna_use_default_archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
@@ -42,10 +48,10 @@ highlight:
   auto_detect: true
   tab_replace: 
 
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+# # Category & Tag
+# default_category: uncategorized
+# category_map:
+# tag_map:
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
@@ -53,6 +59,48 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+
+# SNS settings
+RSS: true
+# weibo_username:     刘子健_且行且歌
+zhihu_username:     繁易
+github_username:    Lxxyx
+# twitter_username:   Demonbane_x
+# facebook_username:  demonbane.cn
+# linkedin_username:  kaijun-chen-42089354
+
+# Build settings
+anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "终行远方"
+sidebar-avatar: https://cdn.lxxyx.cn/2018-06-03-131924.jpg?imageMogr2/auto-orient/thumbnail/400x/interlace/1/blur/1x0/quality/75|imageslim
+
+# Friends
+friends: [
+  {
+      title: "Mieruko0713的实验室",
+      href: "http://mieruko.cn/"
+  },
+  {
+    title: "三省吾身丶丶",
+    href: "http://guowenfh.github.io/?from=Lxxyx.win"
+  },
+  {
+    title: "cathome",
+    href: "https://www.vvmint.cn/?from=Lxxyx.win"
+  },
+  {
+    title: "Tyanboot",
+    href: "https://snowstar.org/?from=Lxxyx.win"
+  }
+]
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
 
 # Pagination
 ## Set per_page to 0 to disable pagination
@@ -67,15 +115,15 @@ Plugins:
 
 #Feed Atom
 feed:
-  type: atom
-  path: atom.xml
+  type: feed
+  path: feed.xml
   limit: 20
 
 #sitemap
 sitemap:
   path: sitemap.xml
 ## Themes: http://hexo.io/themes/
-theme: yilia
+theme: huxblog
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -102,3 +150,5 @@ jsonContent:
     excerpt: false
     categories: false
     tags: true
+
+aboutme: 某211的纯文科生，2018年毕业

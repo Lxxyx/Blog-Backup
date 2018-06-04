@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "3.3.9"
+    "version": "3.7.1"
   },
   "scripts": {
-    "start":
-      "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
+    "start": "hexo s",
+    "deploy": "hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
     "git": "git add -A && git commit -m 'auto backup' && git push"
   },
   "dependencies": {
