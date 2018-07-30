@@ -4,22 +4,23 @@
 <!-- Head tag -->
 <%- partial('_partial/head') %>
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
+    <!-- hack iOS CSS :active style -->
 
-    <%- partial('_partial/nav') %>
+    <body ontouchstart="">
 
-    <!-- Main Content -->
-    <%- body %>
+        <%- partial('_partial/nav') %>
 
-    <!-- Footer -->
-    <%- partial('_partial/footer') %>
+            <!-- Main Content -->
+            <%- body %>
+
+                <!-- Footer -->
+                <%- partial('_partial/footer') %>
 
 
-<!-- Image to hack wechat -->
-<img src="<%= config['url'] %><%= config['root'] %>img/icon_wechat.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
+                    <!-- Image to hack wechat -->
+                    <!-- <img src="<%= config['url'] %><%= config['root'] %>img/icon_wechat.png" width="0" height="0" /> -->
+                    <!-- Migrate from head to bottom, no longer block render and still work -->
 
-</body>
+    </body>
 
 </html>
