@@ -11,7 +11,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://www.lxxyx.win
+url: https://blog.lxxyx.cn
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -85,15 +85,15 @@ friends: [
   },
   {
     title: "三省吾身丶丶",
-    href: "http://guowenfh.github.io/?from=Lxxyx.win"
+    href: "http://guowenfh.github.io/?from=lxxyx"
   },
   {
     title: "cathome",
-    href: "https://www.vvmint.cn/?from=Lxxyx.win"
+    href: "https://www.vvmint.cn/?from=lxxyx"
   },
   {
     title: "Tyanboot",
-    href: "https://snowstar.org/?from=Lxxyx.win"
+    href: "https://snowstar.org/?from=lxxyx"
   }
 ]
 
