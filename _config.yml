@@ -2,7 +2,7 @@
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 # Site
-title: Lxxyx的前端乐园
+title: 繁易の前端乐园
 subtitle: 前端路漫漫，且行且歌
 description: 前端零食工@淘宝FED
 author: Lxxyx
@@ -17,7 +17,7 @@ permalink: :year/:month/:day/:title/
 permalink_defaults:
 
 # Site settings
-SEOTitle: Lxxyx的前端乐园
+SEOTitle: 繁易の前端乐园
 header-img: https://cdn.lxxyx.cn/toutu.jpg
 email: Lxxyxzj@gmail.com
 keyword: "Lxxyx,前端,前端博客,咩咩丸,王怡凡的男朋友"
