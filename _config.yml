@@ -152,3 +152,7 @@ jsonContent:
     tags: true
 
 aboutme: 某211的纯文科生，2018年毕业
+
+inline_assets:
+  enabled: true
+  limit: 100000
