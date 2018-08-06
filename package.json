@@ -11,7 +11,7 @@
     "git": "git add -A && git commit -m 'auto backup' && git push"
   },
   "dependencies": {
-    "hexo": "^3.1.0",
+    "hexo": "^3.7.1",
     "hexo-deployer-git": "0.3.1",
     "hexo-generator-archive": "^0.1.2",
     "hexo-generator-category": "^0.1.2",
