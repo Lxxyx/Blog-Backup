@@ -8,7 +8,6 @@ pipeline:
     command_timeout: 600
     script:
       - cd /home/ubuntu/Blog-Backup
-      - git pull
       - git checkout -- ./
-      - cnpm i
+      - git pull
       - npm run build
