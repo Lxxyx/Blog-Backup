@@ -1,0 +1,13 @@
+pipeline:
+  deploy:
+    image: appleboy/drone-ssh
+    host: 111.231.81.213
+    port: 22
+    username: root
+    secrets: [ ssh_key ]
+    command_timeout: 600
+    script:
+      - cd schedule_be
+      - git pull
+      - docker-compose build
+      - docker-compose up -d
