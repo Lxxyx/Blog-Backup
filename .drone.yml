@@ -7,7 +7,7 @@ pipeline:
     password: Aa19960902
     command_timeout: 600
     script:
-      - cd schedule_be
+      - cd /home/ubuntu/Blog-Backup
       - git pull
-      - docker-compose build
-      - docker-compose up -d
+      - cnpm i
+      - npm run build
