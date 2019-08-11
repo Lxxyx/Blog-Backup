@@ -4,7 +4,7 @@
 # Site
 title: 繁易の前端乐园
 subtitle: 不为繁华易匠心
-description: 前端零食工@淘宝FED
+description: 前端零食工@淘系前端团队
 author: Lxxyx
 language: zh-Hans
 timezone:
@@ -151,7 +151,7 @@ jsonContent:
     categories: false
     tags: true
 
-aboutme: 某211的纯文科生，2018年毕业
+aboutme: 某211的纯文科生，目前在淘系前端团队担任前端零食工一职
 
 # hexo-neat
 neat_enable: true
