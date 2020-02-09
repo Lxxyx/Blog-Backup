@@ -1,17 +1,8 @@
-import fs from 'fs'
+import { readFileSync } from 'fs'
 import globby from 'globby'
-import path from 'path'
 
-const source = path.resolve(__dirname, './source/_posts')
-
-const articles = globby.sync(`${source}/**/*.md`, {
-  dot: false
-})
-
-const count = articles.reduce((prev, current) => {
-  const length = fs.readFileSync(current, { encoding: 'utf-8' }).length
-  return prev + length
-}, 0)
+const articles = globby.sync('./source/_posts/**/*.md')
+const count = articles.reduce((length, file) => length + readFileSync(file, 'utf-8').length, 0)
 
 console.log()
 console.log('---------------------')
