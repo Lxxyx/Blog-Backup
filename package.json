@@ -7,7 +7,7 @@
   },
   "scripts": {
     "start": "hexo s",
-    "deploy": "hexo clean && hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && node count_length.js",
+    "deploy": "hexo clean && hexo g && hexo d && git add -A && git commit -m 'auto backup' && git push && ts-node count_length.ts",
     "git": "git add -A && git commit -m 'auto backup' && git push",
     "build": "hexo g"
   },
@@ -29,6 +29,9 @@
     "hexo-server": "^0.3.2"
   },
   "devDependencies": {
-    "@types/node": "^10.5.6"
+    "@types/node": "^10.5.6",
+    "globby": "^11.0.0",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
   }
 }
