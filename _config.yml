@@ -18,7 +18,7 @@ permalink_defaults:
 
 # Site settings
 SEOTitle: 繁易の前端乐园
-header-img: https://gw.alicdn.com/tfs/TB1c2sisEH1gK0jSZSyXXXtlpXa-2314-1301.jpg
+header-img: https://img.alicdn.com/tfs/TB1LgtVv4v1gK0jSZFFXXb0sXXa-1920-1080.png
 email: Lxxyxzj@gmail.com
 keyword: "Lxxyx,前端,前端博客,咩咩丸,王怡凡的男朋友"
 
@@ -158,4 +158,4 @@ jsonContent:
 aboutme: 某211的纯文科生，目前在淘系前端团队担任前端零食工一职
 
 # hexo-neat
-neat_enable: true
+neat_enable: false

@@ -2,10 +2,8 @@
 title: 哇哦视频 ❤️ FaaS - 迁移前后的那些事儿
 tags: 前端
 date: 2019-11-16 17:30:52
+header-img: https://img.alicdn.com/tfs/TB16uXRv2b2gK0jSZK9XXaEgFXa-1663-688.png
 ---
-
-![image.png](https://img.alicdn.com/tfs/TB12jDblFT7gK0jSZFpXXaTkpXa-1663-688.png#align=left&display=inline&height=344&name=image.png&originHeight=688&originWidth=1663&search=&size=563406&status=done&width=831.5)
-
 <a name="ijr6D"></a>
 ## 前言
 作为一位技术同学，我相信你对于今年集团内部 Serverless 与 FaaS 的热度一定有所感知。
