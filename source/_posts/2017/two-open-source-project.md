@@ -11,13 +11,13 @@ date: 2017-05-14 11:58:18
 链接在此：[koa-router-decorator](https://github.com/Lxxyx/koa-router-decorator)
 第一个是用装饰器写路由的工具。
 
-想法源于flask，之前看flask写的路由，觉得用装饰器写的话，会比较优美，然后就写了这个插件。
+想法源于 flask，之前看 flask 写的路由，觉得用装饰器写的话，会比较优美，然后就写了这个插件。
 效果如下：
 ![](https://cdn.lxxyx.cn/2018-03-26-085653.gif)
 
 ## react-native-dynamic-sty2lesheet
 
 链接在此：[react-native-dynamic-stylesheet](https://github.com/Lxxyx/react-native-dynamic-stylesheet)
-这个则是自己在写RN App时候，有一些样式需要按照状态变化，写起来很繁琐，然后就自己写了个插件，专门用于生成动态的样式表。
+这个则是自己在写 RN App 时候，有一些样式需要按照状态变化，写起来很繁琐，然后就自己写了个插件，专门用于生成动态的样式表。
 
 用上之后自己在这方面的效率确实高了好几倍，还是很开心的。

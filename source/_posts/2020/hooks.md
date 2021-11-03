@@ -257,7 +257,7 @@ Serverless 首次作为一个技术方向，被列为前端委员会的主要攻
 整个 Api 非常简单：
 
 ```typescript
-const ctx = useContext()
+const ctx = useContext();
 ```
 
 ![image.png](https://img.alicdn.com/tfs/TB1d3Ypf0Tfau8jSZFwXXX1mVXa-1920-1080.png)<br />通过 useContext 这个 Api 与 Hook 的开发方式，带来了以下三个好处：

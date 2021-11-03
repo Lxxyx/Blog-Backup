@@ -5,26 +5,29 @@ tags: 前端
 ---
 
 > 本笔记共四篇
-> [Koa源码阅读笔记(1) -- co](http://t.cn/RtVA9Br)
-> [Koa源码阅读笔记(2) -- compose](http://t.cn/RtVApVz)
-> [Koa源码阅读笔记(3) -- 服务器の启动与请求处理](http://t.cn/RtJhLfa)
-> [Koa源码阅读笔记(4) -- ctx对象](http://t.cn/RtJx5sX)
+> [Koa 源码阅读笔记(1) -- co](http://t.cn/RtVA9Br) > [Koa 源码阅读笔记(2) -- compose](http://t.cn/RtVApVz) > [Koa 源码阅读笔记(3) -- 服务器の启动与请求处理](http://t.cn/RtJhLfa) > [Koa 源码阅读笔记(4) -- ctx 对象](http://t.cn/RtJx5sX)
 
 ## 起因
-在7月23号时，我参加了北京的NodeParty。其中第一场演讲就是深入讲解Koa。
-由于演讲只有一个小时，讲不完Koa的原理。于是在听的时候觉得并不是很满足，遂开始自己翻看源代码。
-而Koa1是基于ES6的`generator`的。其在Koa1中的运行依赖于co。
-正好自己之前也想看co的源代码，所以趁着这个机会，一口气将其读完。
+
+在 7 月 23 号时，我参加了北京的 NodeParty。其中第一场演讲就是深入讲解 Koa。
+由于演讲只有一个小时，讲不完 Koa 的原理。于是在听的时候觉得并不是很满足，遂开始自己翻看源代码。
+而 Koa1 是基于 ES6 的`generator`的。其在 Koa1 中的运行依赖于 co。
+正好自己之前也想看 co 的源代码，所以趁着这个机会，一口气将其读完。
+
 <!-- more -->
+
 ## co
-关于co,其作者的介绍很是简单。
+
+关于 co,其作者的介绍很是简单。
+
 > The ultimate generator based flow-control goodness for nodejs (supports thunks, promises, etc)
 
-而co的意义，则在于使用`generator`函数，**解决了JavaScript的回调地狱问题**。
+而 co 的意义，则在于使用`generator`函数，**解决了 JavaScript 的回调地狱问题**。
 
 ## 源码解读
-co的源代码十分简洁，一共才两百余行。而且里面注释到位，所以阅读起来的难度还是不大的。
-co的核心代码如下（已加上自己的注释）：
+
+co 的源代码十分简洁，一共才两百余行。而且里面注释到位，所以阅读起来的难度还是不大的。
+co 的核心代码如下（已加上自己的注释）：
 
 ```javascript
 /**
@@ -38,12 +41,12 @@ co的核心代码如下（已加上自己的注释）：
 
 function co(gen) {
   var ctx = this;
-  var args = slice.call(arguments, 1)
+  var args = slice.call(arguments, 1);
 
   // we wrap everything in a promise to avoid promise chaining,
   // which leads to memory leak errors.
   // see https://github.com/tj/co/issues/180
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     // 启动generator函数。
     if (typeof gen === 'function') gen = gen.apply(ctx, args);
     // 如果gen不存在或者gen.next不是函数（非generator函数）则返回空值
@@ -111,8 +114,14 @@ function co(gen) {
       // 这里value.then(onFulfilled, onRejected)，实际上已经调用并传入了 onFulfilled, onRejected 两个参数。
       // 因为非这些对象，无法调用then方法。也就无法使用onFulfilled
       if (value && isPromise(value)) return value.then(onFulfilled, onRejected);
-      return onRejected(new TypeError('You may only yield a function, promise, generator, array, or object, '
-        + 'but the following object was passed: "' + String(ret.value) + '"'));
+      return onRejected(
+        new TypeError(
+          'You may only yield a function, promise, generator, array, or object, ' +
+            'but the following object was passed: "' +
+            String(ret.value) +
+            '"'
+        )
+      );
     }
   });
 }
@@ -136,9 +145,12 @@ function toPromise(obj) {
 }
 ```
 
-## co的运行机制
-看完了源代码，对`generator`函数有更深的理解，也理解了co的运行机制。
-### 自动执行generator
+## co 的运行机制
+
+看完了源代码，对`generator`函数有更深的理解，也理解了 co 的运行机制。
+
+### 自动执行 generator
+
 首先解决的问题则是自动执行`generator`函数是如何实现的。
 这儿的核心部分则在于:
 
@@ -160,17 +172,23 @@ function co(gen) {
     if (ret.done) return resolve(ret.value);
     var value = toPromise.call(ctx, ret.value);
     if (value && isPromise(value)) return value.then(onFulfilled, onRejected);
-    return onRejected(new TypeError('You may only yield a function, promise, generator, array, or object, '
-      + 'but the following object was passed: "' + String(ret.value) + '"'));
+    return onRejected(
+      new TypeError(
+        'You may only yield a function, promise, generator, array, or object, ' +
+          'but the following object was passed: "' +
+          String(ret.value) +
+          '"'
+      )
+    );
   }
 }
 ```
 
-这儿，在给co传入一个`generator`函数后，co会将其自动启动。然后调用`onFulfilled`函数。
-在`onFulfilled`函数内部，首先则是获取next的返回值。交由`next`函数处理。
-而`next`函数则首先判断是否完成，如果这个generator函数完成了，返回最终的值。
+这儿，在给 co 传入一个`generator`函数后，co 会将其自动启动。然后调用`onFulfilled`函数。
+在`onFulfilled`函数内部，首先则是获取 next 的返回值。交由`next`函数处理。
+而`next`函数则首先判断是否完成，如果这个 generator 函数完成了，返回最终的值。
 否则则将`yield`后的值，转换为`Promise`。
-最后，通过`Promise`的then，并将`onFulfilled`函数作为参数传入。
+最后，通过`Promise`的 then，并将`onFulfilled`函数作为参数传入。
 
 ```javascript
 if (value && isPromise(value)) {
@@ -179,12 +197,13 @@ if (value && isPromise(value)) {
 ```
 
 **而在`generator`中，`yield`句本身没有返回值，或者说总是返回`undefined`。**
-**而next方法可以带一个参数，该参数就会被当作上一个`yield`语句的返回值。**
+**而 next 方法可以带一个参数，该参数就会被当作上一个`yield`语句的返回值。**
 同时通过`onFulfilled`函数，则可以实现自动调用。
-这也就能解释为什么co基于`Promise`。且能自动执行了。
+这也就能解释为什么 co 基于`Promise`。且能自动执行了。
 
-### co.wrap的运行机制
-首先，先放上co.wrap的源代码：
+### co.wrap 的运行机制
+
+首先，先放上 co.wrap 的源代码：
 
 ```javascript
 co.wrap = function (fn) {
@@ -201,33 +220,34 @@ co.wrap = function (fn) {
 
 ```javascript
 var fn = co.wrap(function* (val) {
-  console.log('this is fn')
+  console.log('this is fn');
   return yield Promise.resolve(val);
 });
 
-fn(true).then(function (val) {
-
-});
+fn(true).then(function (val) {});
 ```
 
-然而在这里，我差点想破了脑袋。一直不理解，但执行`co.call(this, fn.apply(this, arguments));`这一句时，为什么fn没有实际运行，控制台也没有输出`'this is fn'`的提示信息。百思不得其解。
-然后在苦思冥想，写了好几个demo后，才发现了问题所在。
+然而在这里，我差点想破了脑袋。一直不理解，但执行`co.call(this, fn.apply(this, arguments));`这一句时，为什么 fn 没有实际运行，控制台也没有输出`'this is fn'`的提示信息。百思不得其解。
+然后在苦思冥想，写了好几个 demo 后，才发现了问题所在。
 因为`co.wrap()`需要传入一个`generator`函数。而`generator函数`在运行时时不会自动执行的。
-这一点，阮一峰的《ECMAScript 6入门》中有提及。
+这一点，阮一峰的《ECMAScript 6 入门》中有提及。
 
-> 不同的是，调用Generator函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象。需要手动调用它的next()方法。
+> 不同的是，调用 Generator 函数后，该函数并不执行，返回的也不是函数运行结果，而是一个指向内部状态的指针对象。需要手动调用它的 next()方法。
 
-而剩下的步骤，就是把这个对象传入co，开始自动执行。
+而剩下的步骤，就是把这个对象传入 co，开始自动执行。
 
 ## 结语
-co的源代码读取来不难，但其处理方式却令人赞叹。
-而且`generator`函数的使用，对ES7中的`Async/Await`的产生，起了关键作用。
-正如其作者TJ在co的说明文档中所说的那样：
+
+co 的源代码读取来不难，但其处理方式却令人赞叹。
+而且`generator`函数的使用，对 ES7 中的`Async/Await`的产生，起了关键作用。
+正如其作者 TJ 在 co 的说明文档中所说的那样：
+
 > Co is a stepping stone towards ES7 async/await.
 
-虽然说我没用过co，只使用过`Async/Await`。
-但如今的`Async/Await`，使用babel，启用[transform-async-to-generator](http://babeljs.io/docs/plugins/transform-async-to-generator/)插件，转译后，也是编译为`generator`函数。
-所以了解一下，还是有好处的。而且阅读co的源代码，是阅读koa1源码的必经之路。
+虽然说我没用过 co，只使用过`Async/Await`。
+但如今的`Async/Await`，使用 babel，启用[transform-async-to-generator](http://babeljs.io/docs/plugins/transform-async-to-generator/)插件，转译后，也是编译为`generator`函数。
+所以了解一下，还是有好处的。而且阅读 co 的源代码，是阅读 koa1 源码的必经之路。
 
 ---
+
 前端路漫漫，且行且歌。

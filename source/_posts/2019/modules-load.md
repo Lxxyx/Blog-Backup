@@ -3,7 +3,9 @@ title: 从改变加载路径开始，一探 Node 的模块加载机制
 tags: 前端
 date: 2019-07-30 24:54:25
 ---
+
 <a name="968aa9a1"></a>
+
 ## 起因
 
 最近因为工作等原因，开始接触到 ncc 这样的 Node 打包方案，而在阅读其源代码的时候，看到了如下的一段代码，用来引入 Typescript 模块的，代码不长，但是很有意思。
@@ -19,36 +21,38 @@ m.paths = Module._nodeModulePaths(process.cwd() + '/');
 let typescript;
 try {
   typescript = m.require('typescript');
-  console.log("ncc: Using typescript@" + typescript.version + " (local user-provided)");
+  console.log('ncc: Using typescript@' + typescript.version + ' (local user-provided)');
 } catch (e) {
   typescript = require('typescript');
-  console.log("ncc: Using typescript@" + typescript.version + " (ncc built-in)");
+  console.log('ncc: Using typescript@' + typescript.version + ' (ncc built-in)');
 }
 
 module.exports = typescript;
 ```
 
-整个代码的运行规则比较简单，当本地存在 TypeScript 模块时，则引入本地的，否则引用当前项目中内置的 TypeScript。<br />仔细想想，这其实在开发工具时是一个非常常见的需求，部分涉及到运行时的依赖，框架在调用时希望优先引用用户本地的版本，本地不存在则引用内置或者全局安装的版本。
+整个代码的运行规则比较简单，当本地存在 TypeScript 模块时，则引入本地的，否则引用当前项目中内置的  TypeScript。<br />仔细想想，这其实在开发工具时是一个非常常见的需求，部分涉及到运行时的依赖，框架在调用时希望优先引用用户本地的版本，本地不存在则引用内置或者全局安装的版本。
 
 而我则对其原理产生了好奇，自己之前也没有见过 module 模块，更没有见过这种可以自由改变模块加载时搜索路径的用法。
 
 本文则是本人的探秘之旅，也仅仅专注于这一个问题上，并不扩散。
 
 <a name="e2f8bf5c"></a>
+
 ## module 模块的实现
 
-Node 中，关于 Module 部分的源代码在 [lib/internal/modules/cjs/loader.js](https://github.com/nodejs/node/blob/b04de23afa6da18d7b81b70c1a4bb53476f125c7/lib/internal/modules/cjs/loader.js) 中。整个文件的“分量”还是有些重的，代码量高达 1000+ 行。
+Node 中，关于 Module 部分的源代码在 [lib/internal/modules/cjs/loader.js](https://github.com/nodejs/node/blob/b04de23afa6da18d7b81b70c1a4bb53476f125c7/lib/internal/modules/cjs/loader.js)  中。整个文件的“分量”还是有些重的，代码量高达 1000+ 行。
 
-直奔主题，从代码中我们不难发现，我们首先初始化了一个 Module 的实例，并通过调用 `_nodeModulePaths` 的静态方法，设置实例的 paths 为当前目录。
+直奔主题，从代码中我们不难发现，我们首先初始化了一个 Module 的实例，并通过调用  `_nodeModulePaths` 的静态方法，设置实例的 paths 为当前目录。
 
 那么，通过对以下几个要点的探索，我们应该就可以得出想要的答案：
 
 - `_nodeModulePaths` 方法内部的实现
 - Module 实例中，paths 变量的作用
-- 调用 Module 实例的 require 方法，是怎么样引入模块的
+- 调用  Module 实例的 require 方法，是怎么样引入模块的
 
 <a name="41fc29c7"></a>
-## _nodeModulePaths，引用模块时，逐级查找 node_modules 的秘密
+
+## \_nodeModulePaths，引用模块时，逐级查找 node_modules 的秘密
 
 在代码中，我们通过 `Module._nodeModulePaths(process.cwd() + '/')` 的方式，来设置 Module 的 `paths` 变量。
 
@@ -65,7 +69,7 @@ function _nodeModulePaths(from) {
   // Guarantee that 'from' is absolute.
   // Return early not only to avoid unnecessary work, but to *avoid* returning
   // an array of two items for a root: [ '//node_modules', '/node_modules' ]
-  if (from === "/") return ["/node_modules"];
+  if (from === '/') return ['/node_modules'];
 
   // note: this approach *only* works when the path is guaranteed
   // to be absolute.  Doing a fully-edge-case-correct path.split
@@ -76,7 +80,7 @@ function _nodeModulePaths(from) {
   for (var i = from.length - 1; i >= 0; --i) {
     const code = from.charCodeAt(i);
     if (code === CHAR_FORWARD_SLASH) {
-      if (p !== nmLen) paths.push(from.slice(0, last) + "/node_modules");
+      if (p !== nmLen) paths.push(from.slice(0, last) + '/node_modules');
       last = i;
       p = 0;
     } else if (p !== -1) {
@@ -89,7 +93,7 @@ function _nodeModulePaths(from) {
   }
 
   // Append /node_modules to handle root paths.
-  paths.push("/node_modules");
+  paths.push('/node_modules');
 
   return paths;
 }
@@ -97,14 +101,19 @@ function _nodeModulePaths(from) {
 
 > [Online Demo](https://codesandbox.io/s/ecstatic-ganguly-m1n9f)
 
-
 调用如下：
 
 ```typescript
-console.log(_nodeModulePaths("/Users/lxxyx/playground/node"));
+console.log(_nodeModulePaths('/Users/lxxyx/playground/node'));
 
 // output
-["/Users/lxxyx/playground/node/node_modules", "/Users/lxxyx/playground/node_modules", "/Users/lxxyx/node_modules", "/Users/node_modules", "/node_modules"]
+[
+  '/Users/lxxyx/playground/node/node_modules',
+  '/Users/lxxyx/playground/node_modules',
+  '/Users/lxxyx/node_modules',
+  '/Users/node_modules',
+  '/node_modules',
+];
 ```
 
 可以看到，这个路径是由传入的目录决定，并逐级生成的。
@@ -115,23 +124,22 @@ console.log(_nodeModulePaths("/Users/lxxyx/playground/node"));
 - Module 实例中，paths 变量的作用： Node 引用模块时逐级引用的目录路径
 
 <a name="a223feb0"></a>
+
 ### require 方法，引入模块的具体实现
 
 require 方法应该是每个接触 Node 同学最为熟悉的函数之一，其核心作用便是引用模块。
 
 > 而之前的我却也只是知其然而不知其所以然，只是看些文章，未曾深入的学习与理解，似懂非懂的。
 
-
 首先我们看像 require 的源代码：
 
 ```typescript
 // Loads a module at the given file path. Returns that module's
 // `exports` property.
-Module.prototype.require = function(id) {
+Module.prototype.require = function (id) {
   validateString(id, 'id');
   if (id === '') {
-    throw new ERR_INVALID_ARG_VALUE('id', id,
-                                    'must be a non-empty string');
+    throw new ERR_INVALID_ARG_VALUE('id', id, 'must be a non-empty string');
   }
   requireDepth++;
   try {
@@ -145,7 +153,8 @@ Module.prototype.require = function(id) {
 代码相对简单，核心逻辑都在 `Module._load` 方法中实现了。
 
 <a name="848f15da"></a>
-## Module._load，引入模块的内部实现
+
+## Module.\_load，引入模块的内部实现
 
 `Module._load` 方法是一段较长的函数，有五六十行，里面包括了模块的加载、缓存、解析等机制，可以说是引入模块的核心逻辑。
 
@@ -159,7 +168,6 @@ Module.prototype.require = function(id) {
 > //    Then have it load  the file contents before returning its exports
 > //    object.
 
-
 由于内部逻辑较多，且许多与本次探讨的内容无关，因此关于该方法，我会着重于探索以下几个问题（也是个人比较感兴趣的）：
 
 - 缓存逻辑是怎么实现的
@@ -167,6 +175,7 @@ Module.prototype.require = function(id) {
 - 加载模块时，如何通过 `paths` 变量改变引入模块时查找的 node_modules 目录
 
 <a name="b89974c5"></a>
+
 ### 缓存逻辑的实现
 
 Node 中关于 require 的缓存逻辑比我想的要简单许多。<br />缓存仅仅是一个对象，通过：`Module._cache = Object.create(null);` 来创建。
@@ -182,19 +191,20 @@ Module._cache[filename] = module;
 // 从缓冲中取出
 const cachedModule = Module._cache[filename];
 if (cachedModule !== undefined) {
-   return cachedModule.exports;
+  return cachedModule.exports;
 }
 ```
 
 通过这也不难发现，如果一个文件被缓存起来了，那么在整个生命周期内，它都是在缓存中的。
 
-想要更新也很简单，清空一下 cache 对象即可，而我们常用的清除 require.cache 方式，实际上是清空的 Module 的 _cache，这一点在代码中也有所表示：
+想要更新也很简单，清空一下 cache 对象即可，而我们常用的清除 require.cache 方式，实际上是清空的 Module 的 \_cache，这一点在代码中也有所表示：
 
 ```typescript
 require.cache = Module._cache;
 ```
 
 <a name="5318d5d0"></a>
+
 ### 如何加载一个 JS 模块
 
 在 Node 中，加载某个具体的文件是通过 `module.load(filename);` 方法实现的。
@@ -231,6 +241,7 @@ Module._extensions['.js'] = function (module, filename) {
 ```
 
 <a name="29269923"></a>
+
 ### 模块的编译与执行
 
 从代码中不难看出，此处先读取了代码的内容，并且 JS 代码进行了编译操作。
@@ -251,18 +262,19 @@ fs.readFile('./file.txt', 'utf-8', (err, data) => {
 
 ```typescript
 (function (exports, require, module, __filename, __dirname) {
-    const fs = require('fs');
-    fs.readFile('./file.txt', 'utf-8', (err, data) => {
-      console.log('data: ', data);
-    });
+  const fs = require('fs');
+  fs.readFile('./file.txt', 'utf-8', (err, data) => {
+    console.log('data: ', data);
+  });
 });
 ```
 
-这其中就包括了运行时的一些关键变量，exports/require/__filename 等。<br />执行时则是通过传入这些预先定义或者生成好的变量，[来执行并拿到结果](https://github.com/nodejs/node/blob/b04de23afa6da18d7b81b70c1a4bb53476f125c7/lib/internal/modules/cjs/loader.js#L867-L868)：
+这其中就包括了运行时的一些关键变量，exports/require/\_\_filename 等。<br />执行时则是通过传入这些预先定义或者生成好的变量，[来执行并拿到结果](https://github.com/nodejs/node/blob/b04de23afa6da18d7b81b70c1a4bb53476f125c7/lib/internal/modules/cjs/loader.js#L867-L868)：
 
 而执行结果，就包括 module.exports 变量，可以通过这个变量拿到这个模块导出的所有内容。<br />至此，我们就可以将整个 require 的链路完整的串起来了。
 
 <a name="c09bb1dd"></a>
+
 ### paths 变量对于引用模块的影响
 
 回到我们一开始的问题，我们通过定义 paths ，使得 require 的查找路径可以从我们指定的目录开始。<br />那么自然我们也想知道这部分在代码中是如何实现的。
@@ -276,6 +288,7 @@ fs.readFile('./file.txt', 'utf-8', (err, data) => {
 那么关于这个问题，我想也有明确的答案了。
 
 <a name="7a0a21d5"></a>
+
 ## 后记
 
 而此次对于 Node 模块加载机制的深入学习与了解，于我而言是更了解底层实现的一个过程，除此之外感受最深的则是：代码虽然很多，但读起来完全不会觉得累或者绕弯子。看似冗长的变量名，恰到好处的注释，一点也不“优雅”的代码组织方式，恰恰让这段代码比许多代码都要好读。

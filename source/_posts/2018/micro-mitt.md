@@ -9,37 +9,39 @@ date: 2018-01-26 00:55:08
 关于 `EventEmitter` 我想应该很多同学都很熟悉了。简而言之是一个事件的发布与订阅器。
 这两天读到了一些非常有意思的小库，虽然小但是功能完备，比如说这次我们要讲解的 Mitt.
 
-[Github地址](https://github.com/developit/mitt)
+[Github 地址](https://github.com/developit/mitt)
+
 <!-- more -->
+
 ## 小
 
-`Mitt`是一个微型的 `EventEmitter` 库，实现了基本的 `on`, `off`, `emit`  三个Api，对于使用 EventEmitter 其他功能不多的同学来说，200byte 的体积可以说是非常划算了。
+`Mitt`是一个微型的 `EventEmitter` 库，实现了基本的 `on`, `off`, `emit` 三个 Api，对于使用 EventEmitter 其他功能不多的同学来说，200byte 的体积可以说是非常划算了。
 
 当然小也有其付出的代价，那就是只支持这三个功能。
 至于怎么取舍，见仁见智吧，我建议是先使用 `mitt`，就算后期要更换别的库，因为 Api 统一，所以更换起来基本不费事。
 
-`Mitt` 在 Github的 demo 中，也显示出了代码虽小，五脏俱全的特点。
+`Mitt` 在 Github 的 demo 中，也显示出了代码虽小，五脏俱全的特点。
 
 Demo:
 
 ```js
-import mitt from 'mitt'
+import mitt from 'mitt';
 
-let emitter = mitt()
+let emitter = mitt();
 
 // listen to an event
-emitter.on('foo', e => console.log('foo', e) )
+emitter.on('foo', (e) => console.log('foo', e));
 
 // listen to all events
-emitter.on('*', (type, e) => console.log(type, e) )
+emitter.on('*', (type, e) => console.log(type, e));
 
 // fire an event
-emitter.emit('foo', { a: 'b' })
+emitter.emit('foo', { a: 'b' });
 
 // working with handler references:
 function onFoo() {}
-emitter.on('foo', onFoo)   // listen
-emitter.off('foo', onFoo)  // unlisten
+emitter.on('foo', onFoo); // listen
+emitter.off('foo', onFoo); // unlisten
 ```
 
 ## 代码解读
@@ -51,10 +53,10 @@ emitter.off('foo', onFoo)  // unlisten
 
 ```js
 export default function mitt(all: EventHandlerMap) {
-	all = all || Object.create(null);
-	return {
-	  // ...Api
-	}
+  all = all || Object.create(null);
+  return {
+    // ...Api
+  };
 }
 ```
 
@@ -91,31 +93,31 @@ var obj = {};
 
 var getQueue = (key) => {
   if (!obj[key]) {
-    obj[key] = []
+    obj[key] = [];
   }
 
-  return obj[key]
-}
+  return obj[key];
+};
 ```
 
 这是一个很常见的操作，但是在 `mitt` 的却简洁了很多。
 
 ```js
 export default function mitt(all: EventHandlerMap) {
-	all = all || Object.create(null);
+  all = all || Object.create(null);
 
-	return {
-		/**
-		 * Register an event handler for the given type.
-		 *
-		 * @param  {String} type	Type of event to listen for, or `"*"` for all events
-		 * @param  {Function} handler Function to call in response to given event
-		 * @memberOf mitt
-		 */
-		on(type: string, handler: EventHandler) {
-			(all[type] || (all[type] = [])).push(handler);
-		}
-	};
+  return {
+    /**
+     * Register an event handler for the given type.
+     *
+     * @param  {String} type	Type of event to listen for, or `"*"` for all events
+     * @param  {Function} handler Function to call in response to given event
+     * @memberOf mitt
+     */
+    on(type: string, handler: EventHandler) {
+      (all[type] || (all[type] = [])).push(handler);
+    },
+  };
 }
 ```
 
@@ -127,12 +129,11 @@ export default function mitt(all: EventHandlerMap) {
 PS：这个操作我之前在读 React setState 源代码时，也碰到过。
 ![](https://cdn.lxxyx.cn/2018-03-26-085724.png)
 
-
 其中 queue 的获取便是使用了这种方式。
 
 ### 无符号右移（>>>）
 
-在 `off` 的Api中，有使用到无符号右移（>>>）的操作，具体操作如下：
+在 `off` 的 Api 中，有使用到无符号右移（>>>）的操作，具体操作如下：
 
 ```js
 /**
@@ -167,10 +168,10 @@ off(type: string, handler: EventHandler) {
 Demo:
 
 ```js
-import mitt from 'mitt'
-let emitter = mitt()
+import mitt from 'mitt';
+let emitter = mitt();
 // listen to all events
-emitter.on('*', (type, e) => console.log(type, e) )
+emitter.on('*', (type, e) => console.log(type, e));
 ```
 
 而在源代码里，这个的实现很简洁：

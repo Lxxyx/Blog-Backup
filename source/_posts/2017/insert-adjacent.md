@@ -6,14 +6,16 @@ date: 2017-09-25 00:33:41
 
 ## 起因
 
-看朋友圈时候，有看到一个自己从来没有发现过的Api。
+看朋友圈时候，有看到一个自己从来没有发现过的 Api。
 
 ![](https://cdn.lxxyx.cn/2018-03-26-085550.jpg)
 
 名字是 insertAdjacentHTML。
 
-觉得很好奇，就试着看了看这个Api，发现在某些场景下，出奇的好用。
+觉得很好奇，就试着看了看这个 Api，发现在某些场景下，出奇的好用。
+
 <!-- more -->
+
 ## 概述
 
 > insertAdjacentElement() 方法将一个给定的元素节点插入到相对于被调用的元素的给定的一个位置。
@@ -22,8 +24,7 @@ date: 2017-09-25 00:33:41
 
 ## 语法与使用
 
-[element.insertAdjacentHTML](
-https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentHTML)
+[element.insertAdjacentHTML](https://developer.mozilla.org/zh-CN/docs/Web/API/Element/insertAdjacentHTML)
 
 直接看这个就行了。
 
