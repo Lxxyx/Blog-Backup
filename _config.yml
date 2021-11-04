@@ -20,7 +20,7 @@ permalink_defaults:
 SEOTitle: 繁易の前端乐园
 header-img: https://img.alicdn.com/tfs/TB1LgtVv4v1gK0jSZFFXXb0sXXa-1920-1080.png
 email: Lxxyxzj@gmail.com
-keyword: "Lxxyx,前端,前端博客,咩咩丸,王怡凡的男朋友"
+keyword: "Lxxyx,前端,前端博客"
 
 # Directory
 source_dir: source
@@ -79,10 +79,6 @@ sidebar-avatar: https://cdn.lxxyx.cn/2018-06-03-131924.jpg?imageMogr2/auto-orien
 
 # Friends
 friends: [
-  {
-      title: "Mieruko0713的实验室",
-      href: "http://mieruko.cn/"
-  },
   {
     title: "三省吾身丶丶",
     href: "http://guowenfh.github.io/?from=lxxyx"
