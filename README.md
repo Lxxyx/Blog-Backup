@@ -7,4 +7,4 @@
 
 备份采取一键式命令。输入`npm start`，即可部署博客的同时也能自动上传最新程序至Github。防止博客文章丢失。
 
-[博客地址：Lxxyx的前端乐园](http://www.lxxyx.win)
+[博客地址：Lxxyx的前端乐园](https://blog.lxxyx.cn/)
