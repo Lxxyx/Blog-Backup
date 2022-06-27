@@ -115,14 +115,14 @@ app.createContext = function (req, res) {
 这儿，因为每次都要创建并调用`ctx`对象。为了避免影响原有的`context`,`request`,`response`对象。
 这儿采用了`Object.create()`来克隆对象。
 
-![2016-08-02_14:52:55.jpg](https://cdn.lxxyx.cn/2018-03-26-085420.jpg)
+![2016-08-02_14:52:55.jpg](/images/2018-03-26-085420.jpg)
 
 ## context.js
 
 首先就来分析，最开始的 context.js。
 context 的实现很简单，但有意思的地方在于 delegate 这个地方。
 就如下图所示：
-![2016-08-02_14:45:30.jpg](https://cdn.lxxyx.cn/2018-03-26-085422.jpg)
+![2016-08-02_14:45:30.jpg](/images/2018-03-26-085422.jpg)
 
 我看了 delegate 这个源代码，功能是把`context`中相应的方法调用和属性读取，委托至某个对象中。
 而不用自己一个一个的写`apply`,`call`等。
@@ -132,7 +132,7 @@ context 的实现很简单，但有意思的地方在于 delegate 这个地方�
 关于 request 和 response，我这儿就不详细写了。
 在这儿放一张图足以。
 
-![2016-08-02_14:56:29.jpg](https://cdn.lxxyx.cn/2018-03-26-085423.jpg)
+![2016-08-02_14:56:29.jpg](/images/2018-03-26-085423.jpg)
 
 实际上，request 和 response 是通过 getter 和 setter，来实现存取不同属性的功能。
 另外，通过刚才说的 delegate 方法，则使用 ctx 对象时，便能自动通过 getter 和 setter 获取想要的内容。

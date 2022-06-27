@@ -7,7 +7,7 @@ tags: 前端
 > 本笔记共四篇
 > [Koa 源码阅读笔记(1) -- co](http://t.cn/RtVA9Br) > [Koa 源码阅读笔记(2) -- compose](http://t.cn/RtVApVz) > [Koa 源码阅读笔记(3) -- 服务器の启动与请求处理](http://t.cn/RtJhLfa) > [Koa 源码阅读笔记(4) -- ctx 对象](http://t.cn/RtJx5sX)
 
-![2016-07-27_19:11:39.jpg](https://cdn.lxxyx.cn/2018-03-26-85415.jpg)
+![2016-07-27_19:11:39.jpg](/images/2018-03-26-85415.jpg)
 
 ## 起因
 

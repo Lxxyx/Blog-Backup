@@ -16,11 +16,11 @@ Native端：Native init 与 JS init
 JS端：Fetch Data, JS Render
 Native: Native Render
 
-![](https://cdn.lxxyx.cn/2018-03-26-085559.jpg)
+![](/images/2018-03-26-085559.jpg)
 
 ## 启动流程
 
-![](https://cdn.lxxyx.cn/2018-03-26-085601.jpg)
+![](/images/2018-03-26-085601.jpg)
 
 问题：
 
@@ -30,76 +30,76 @@ Native: Native Render
 
 ### 预加载
 
-![](https://cdn.lxxyx.cn/2018-03-26-085603.jpg)
+![](/images/2018-03-26-085603.jpg)
 
 具体实现：
 
-![](https://cdn.lxxyx.cn/2018-03-26-085605.jpg)
+![](/images/2018-03-26-085605.jpg)
 
-![](https://cdn.lxxyx.cn/2018-03-26-085606.jpg)
+![](/images/2018-03-26-085606.jpg)
 
 ### 增量更新
 
-![](https://cdn.lxxyx.cn/2018-03-26-085608.jpg)
+![](/images/2018-03-26-085608.jpg)
 
 ### 分包
 
-![](https://cdn.lxxyx.cn/2018-03-26-085611.jpg)
+![](/images/2018-03-26-085611.jpg)
 
 具体架构：
 
-![](https://cdn.lxxyx.cn/2018-03-26-085612.jpg) 
+![](/images/2018-03-26-085612.jpg) 
 
 ## JS端优化
 
-![](https://cdn.lxxyx.cn/2018-03-26-085614.jpg)
+![](/images/2018-03-26-085614.jpg)
 
 ### 加载速度快
 
 本地缓存
 
-![](https://cdn.lxxyx.cn/2018-03-26-085616.jpg)
+![](/images/2018-03-26-085616.jpg)
 
 缓存同时也能实现数据复用
 
 非首屏异步加载
 
-![](https://cdn.lxxyx.cn/2018-03-26-085617.jpg)
+![](/images/2018-03-26-085617.jpg)
 
 通过 Hack 的方式，使得原有需要5个节点的轮播图，改为只创建3个节点。
 通过3个节点，模拟出轮播图的效果
 
-![](https://cdn.lxxyx.cn/2018-03-26-085618.jpg)
+![](/images/2018-03-26-085618.jpg)
 
 ### 滚动优化
 
-![](https://cdn.lxxyx.cn/2018-03-26-085621.jpg)
+![](/images/2018-03-26-085621.jpg)
 
 ListView配置
 
-![](https://cdn.lxxyx.cn/2018-03-26-085631.jpg)
+![](/images/2018-03-26-085631.jpg)
 
 ### 体验优化
 
-![](https://cdn.lxxyx.cn/2018-03-26-085632.jpg)
+![](/images/2018-03-26-085632.jpg)
 
-![](https://cdn.lxxyx.cn/2018-03-26-085635.jpg)
+![](/images/2018-03-26-085635.jpg)
 
-![](https://cdn.lxxyx.cn/2018-03-26-085636.jpg)
+![](/images/2018-03-26-085636.jpg)
 
 目的是为了，点击时按钮先出现点击效果，然后在下一帧执行一些耗时的操作。
 视觉优先
 
-![](https://cdn.lxxyx.cn/2018-03-26-085638.jpg)
+![](/images/2018-03-26-085638.jpg)
 
-![](https://cdn.lxxyx.cn/2018-03-26-085640.jpg)
+![](/images/2018-03-26-085640.jpg)
 
 性能与可控性强
 
 ### 组件划分
 
-![](https://cdn.lxxyx.cn/2018-03-26-085641.jpg)
+![](/images/2018-03-26-085641.jpg)
 
 ### 其他优化
 
-![](https://cdn.lxxyx.cn/2018-03-26-085643.jpg)
+![](/images/2018-03-26-085643.jpg)

@@ -75,7 +75,7 @@ anchorjs: true                          # if you want to customize anchor. check
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "终行远方"
-sidebar-avatar: https://cdn.lxxyx.cn/2018-06-03-131924.jpg?imageMogr2/auto-orient/thumbnail/400x/interlace/1/blur/1x0/quality/75|imageslim
+sidebar-avatar: /images/avatars.jpg
 
 # Friends
 friends: [

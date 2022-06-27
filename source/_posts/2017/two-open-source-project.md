@@ -13,7 +13,7 @@ date: 2017-05-14 11:58:18
 
 想法源于 flask，之前看 flask 写的路由，觉得用装饰器写的话，会比较优美，然后就写了这个插件。
 效果如下：
-![](https://cdn.lxxyx.cn/2018-03-26-085653.gif)
+![](/images/2018-03-26-085653.gif)
 
 ## react-native-dynamic-sty2lesheet
 

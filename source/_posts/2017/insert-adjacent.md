@@ -8,7 +8,7 @@ date: 2017-09-25 00:33:41
 
 看朋友圈时候，有看到一个自己从来没有发现过的 Api。
 
-![](https://cdn.lxxyx.cn/2018-03-26-085550.jpg)
+![](/images/2018-03-26-085550.jpg)
 
 名字是 insertAdjacentHTML。
 
