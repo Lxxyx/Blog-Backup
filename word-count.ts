@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs'
+import { readFileSync } from 'node:fs'
 import globby from 'globby'
 
 const articles = globby.sync('./source/_posts/**/*.md')

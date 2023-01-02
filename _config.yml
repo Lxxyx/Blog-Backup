@@ -36,7 +36,8 @@ skip_render:
 new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
-external_link: true # Open external links in new tab
+external_link:
+  enable: true # Open external links in new tab
 filename_case: 0
 render_drafts: false
 post_asset_folder: false
@@ -152,6 +153,3 @@ jsonContent:
     tags: true
 
 aboutme: 某211的纯文科生，目前在淘系前端团队担任前端零食工一职
-
-# hexo-neat
-neat_enable: false

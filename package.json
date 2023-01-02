@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "hexo": {
-    "version": "3.9.0"
+    "version": "5.4.2"
   },
   "scripts": {
     "start": "hexo s",
@@ -11,31 +11,29 @@
     "format": "prettier source/_posts/**/*.md --write"
   },
   "dependencies": {
-    "hexo": "^3.7.1",
-    "hexo-deployer-git": "0.3.1",
-    "hexo-generator-archive": "^0.1.2",
-    "hexo-generator-category": "^0.1.2",
-    "hexo-generator-feed": "^1.0.3",
+    "hexo": "^5.4.2",
+    "hexo-generator-archive": "^0.1.5",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-feed": "^1.2.2",
     "hexo-generator-index": "^0.2.1",
     "hexo-generator-json-content": "^3.0.1",
-    "hexo-generator-sitemap": "^1.0.1",
+    "hexo-generator-sitemap": "^1.2.0",
     "hexo-generator-tag": "^0.2.0",
-    "hexo-migrator-rss": "^0.1.2",
-    "hexo-neat": "^1.0.4",
+    "hexo-migrator-rss": "^0.1.4",
     "hexo-renderer-ejs": "^0.3.1",
     "hexo-renderer-marked": "^0.3.2",
     "hexo-renderer-stylus": "2.0.1",
-    "hexo-server": "^0.3.2",
-    "highlight.js": "^10.0.2"
+    "hexo-server": "^0.3.3",
+    "highlight.js": "^10.7.3"
   },
   "devDependencies": {
-    "@types/fs-extra": "^8.0.1",
-    "@types/node": "^10.5.6",
+    "@types/fs-extra": "^8.1.2",
+    "@types/node": "^18.11.18",
     "esno": "^0.11.0",
     "fs-extra": "^8.1.0",
-    "globby": "^11.0.0",
+    "globby": "^11.1.0",
     "prettier": "2.4.1",
-    "typescript": "^4"
+    "typescript": "^4.9.4"
   },
   "resolutions": {
     "stylus": "^0.54.8"
